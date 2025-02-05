@@ -1,5 +1,5 @@
 29/01/2025
-    • Data-Driven Culture
+Data-Driven Culture
         ◦ The session focused on building a data-driven culture within organizations.
         ◦ Key elements of a data-driven culture include:
             ▪ Clean, usable data
@@ -9,14 +9,14 @@
             ▪ Collaboration and stakeholder buy-in
             ▪ Executive support and data strategy
 
-    • Data Engineering Role
+Data Engineering Role
         ◦ Data engineers play a crucial role in enabling businesses to harness the power of big data.
         ◦ They design, build, and maintain infrastructure and systems for data collection, storage, and processing.
         ◦ Data engineers ensure data quality and reliability, which is essential for data-driven decision-making.
-    • Big Data vs. Small Data
+Big Data vs. Small Data
         ◦ Big Data: Characterized by high volume, variety, velocity, veracity, and value. Examples include social media platforms analyzing billions of user interactions daily.
         ◦ Small Data: Smaller in volume, often structured, and easier to analyze. Examples include personal fitness trackers recording daily steps and calories.
-    • Data Formats and Standards
+Data Formats and Standards
         ◦ Common data formats include JSON, CSV, and XML.
         ◦ Cloud computing standards like AWS Well-Architected Framework and OpenAPI Specification were discussed.
         ◦ Regulatory requirements such as GDPR (General Data Protection Regulation) and ISO 27001 (Information Security Management) were highlighted.
