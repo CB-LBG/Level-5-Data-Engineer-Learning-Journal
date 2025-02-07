@@ -1,0 +1,18 @@
+A summary of the key learning points from this topic is provided below.
+
+
+There are two main categories of data types: qualitative (nominal, ordinal, binomial) and quantitative (discrete, continuous)
+
+Data is measured using standardised units ranging from bits to yottabytes, with each larger unit being 1,024 times bigger than the previous one
+
+Important technological standards for data engineering include data formats like JSON, CSV, XML, API standards like REST and OpenAPI Specification, and cloud computing standards like AWS Well-Architected Framework
+
+Key regulations governing data include GDPR for data privacy, HIPAA for healthcare data security, and CCPA for consumer privacy rights
+
+The three fundamental principles of data stewardship are data quality, data governance, and data ethics
+
+Engineering best practices for data systems include scalability, reliability, security, performance optimisation, and documentation
+
+The data management lifecycle involves collecting data from sources, cleaning/transforming data, integrating datasets, and visualising insights using tools like SQL, Power BI, and Tableau
+
+Combining internal data with external open data, administrative data, research data, and third-party sources enriches insights for better decision-making 
