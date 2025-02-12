@@ -1,0 +1,47 @@
+Objectives
+    • Understand the limitations of the Waterfall project management model in data projects.
+    • Learn how Agile methodologies (Scrum, Kanban) improve data project outcomes.
+    • Explore the integration of Lean and Six Sigma principles for process optimization.
+    • Understand key roles in Agile Scrum, such as Scrum Master and Product Owner.
+    • Learn how to apply iterative development, collaboration, and adaptability in data-driven initiatives.
+    • Gain insights into stakeholder engagement and aligning data projects with business objectives.
+    • Review real-world case studies and best practices for implementing Agile in data engineering.
+
+Key Concepts
+1. Challenges of Traditional Waterfall Project Management
+    • Rigid and linear approach: Sequential steps (requirements → design → development → testing → deployment).
+    • Limited adaptability: Difficult to accommodate evolving project needs.
+    • Delayed feedback cycles: Stakeholder input often arrives too late.
+    • Complexity in data projects: Inflexible models struggle with unstructured data, real-time changes, and continuous integration.
+2. Agile Methodologies in Data Projects
+    • Agile core values:
+        ◦ Adaptability: Responding quickly to changes.
+        ◦ Iterative development: Breaking work into smaller cycles (sprints).
+        ◦ Collaboration: Engaging stakeholders early and frequently.
+        ◦ Delivering incremental value: Ensuring continuous improvements.
+    • Scrum vs. Kanban:
+        ◦ Scrum: Structured sprints (1-4 weeks), with roles like Scrum Master and Product Owner.
+        ◦ Kanban: Focuses on visual workflow, limiting work in progress to avoid bottlenecks.
+3. Key Roles in Agile Scrum
+    • Scrum Master: Facilitates Agile processes, removes blockers, ensures collaboration.
+    • Product Owner: Manages backlog, prioritizes work, and aligns project goals with business needs.
+    • Development Team: Engineers, analysts, and stakeholders working collaboratively.
+4. Agile Practices in Data Engineering
+    • User Stories & Sprint Planning: Define tasks, estimate efforts (e.g., using Story Points).
+    • Sprint Reviews & Retrospectives:
+        ◦ Sprint Review: Demonstrating completed work to stakeholders.
+        ◦ Sprint Retrospective: Reflecting on processes to improve efficiency.
+    • Backlog Grooming: Continuous refinement of task priorities to prevent scope creep.
+    • Burn-down Charts: Visual tracking of sprint progress.
+5. Lean & Six Sigma in Data Projects
+    • Lean: Eliminating waste, focusing on value-driven workflows.
+    • Six Sigma: Improving data quality and reducing errors using DMAIC (Define, Measure, Analyze, Improve, Control).
+
+Questions
+    1. How can Agile principles be adapted for large-scale data projects that involve long processing times?
+    2. What are the best practices for managing data complexity within Agile sprints?
+    3. How can companies balance Waterfall and Agile in hybrid project management approaches?
+    4. What tools and frameworks are recommended for implementing Scrum and Kanban in data engineering teams?
+    5. How can we measure the success of Agile adoption in a data-driven organization?
+    6. What are the biggest challenges in transitioning from traditional project management to Agile for data teams?
+
