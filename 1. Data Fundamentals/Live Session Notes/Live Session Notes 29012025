@@ -27,6 +27,8 @@ Best Practices in Data Engineering
         ◦ Proper documentation ensures that data is understandable and usable by others.
     • Data Ethics
         ◦ Ethical guidelines must be followed to ensure responsible data usage.
+Continuous data has infinite possible values within a range (e.g., temperature, time) and often requires floating-point storage and careful aggregation.
+Discrete data consists of countable, distinct values (e.g., customer counts, order IDs) and is typically stored as integers or categories for efficient querying.
 Activity: Employee Churn Decision Tree
     • Objective: Build a decision tree for predicting employee churn.
     • Key Factors Identified:
