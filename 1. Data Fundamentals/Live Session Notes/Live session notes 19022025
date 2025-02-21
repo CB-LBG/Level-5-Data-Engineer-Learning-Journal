@@ -1,0 +1,147 @@
+Key Topics Covered:
+
+    Lean Framework:
+
+        Originated from Toyota in the mid-20th century.
+
+        Focuses on streamlining production processes and eliminating waste.
+
+        Seven Types of Waste:
+
+            Defects (errors/mistakes)
+
+            Overproduction (producing more than needed)
+
+            Waiting (downtime/idle time)
+
+            Underutilized talent (not leveraging skills)
+
+            Excess processing (unnecessary steps)
+
+            Transportation (moving items unnecessarily)
+
+            Motion (unnecessary movement of people/machinery)
+
+        Key Lean Principles:
+
+            Jidoka: Automation with a human touch (empowering workers to stop production if defects are detected).
+
+            Just in Time (JIT): Producing only what is needed, when needed, to minimize inventory costs.
+
+    Six Sigma:
+
+        A structured problem-solving approach focused on process improvement and waste reduction.
+
+        DMAIC Process:
+
+            Define: Clearly define the problem, project goals, and customer requirements.
+
+            Measure: Quantify the current process using data and analysis.
+
+            Analyze: Identify root causes of inefficiencies.
+
+            Improve: Develop and implement solutions.
+
+            Control: Sustain improvements over time.
+
+    Lean Six Sigma:
+
+        Combines Lean (focus on waste elimination) and Six Sigma (focus on process improvement).
+
+        Used to enhance productivity, efficiency, and customer satisfaction.
+
+    Agile and Lean Integration:
+
+        Agile is bottom-up, focusing on iterative refinement.
+
+        Lean is top-down, focusing on high-level process optimization.
+
+        Both can be combined to improve product development and customer satisfaction.
+
+    Minimum Viable Product (MVP):
+
+        A strategy to release a product with the minimum set of features needed to gather feedback.
+
+        Helps minimize costs and mitigate risks by validating assumptions early.
+
+    Test and Learn Mentality:
+
+        Continuous cycle of creating hypotheses, gathering data, and learning from results.
+
+        Encourages iterative development and risk mitigation.
+
+    Data Science Collaboration (CRISP-DM):
+
+        CRISP-DM (Cross-Industry Standard Process for Data Mining):
+
+            Business Understanding: Define project goals and requirements.
+
+            Data Understanding: Explore and analyze data.
+
+            Data Preparation: Clean and prepare data for modeling.
+
+            Modeling: Develop and test models.
+
+            Evaluation: Assess model performance.
+
+            Deployment: Implement the model and monitor its performance.
+
+    Scientific Method in Agile:
+
+        Similar to the test and learn cycle, involving observation, hypothesis formation, experimentation, and conclusion.
+
+Data Architecture:
+
+    Architectural Diagrams vs. Design Diagrams:
+
+        Architectural Diagrams: High-level overview of system components and interactions (e.g., data flow, system structure).
+
+        Design Diagrams: Detailed view of specific components, workflows, and implementations.
+
+    Layered Architecture:
+
+        Divides systems into horizontal layers (e.g., data sources, data processing, analytics).
+
+        Enhances modularity, scalability, and maintainability.
+
+    UML (Unified Modeling Language):
+
+        Graphical representation of system structure and behavior.
+
+        Examples: Component diagrams, sequence diagrams, deployment diagrams.
+
+    Data Architecture Frameworks:
+
+        TOGAF (The Open Group Architecture Framework): A framework for designing enterprise architectures.
+
+        Zachman Framework: A matrix-based framework for organizing architectural artifacts.
+
+        DODAF (Department of Defense Architecture Framework): Used for complex system integration.
+
+    Data Mesh:
+
+        A decentralized approach to data management.
+
+        Focuses on domain-driven ownership, self-service infrastructure, and federated governance.
+
+        Shifts from centralized data lakes to distributed data products.
+
+Key Takeaways:
+
+    Lean and Six Sigma: Focus on eliminating waste and improving processes.
+
+    Agile and Lean Integration: Combines iterative development with process optimization.
+
+    MVP: A strategy to release products quickly and gather feedback.
+
+    Data Architecture: Involves designing systems for data collection, storage, and analysis.
+
+    Data Mesh: A modern approach to decentralized data management.
+
+Next Steps:
+
+    Self-Study: Explore Lean, Six Sigma, and Agile methodologies further.
+
+    Practice: Create architectural diagrams using tools like Lucidchart, Draw.io, or Visio.
+
+    Apply: Use the test and learn mentality in your projects to iterate and improve.
