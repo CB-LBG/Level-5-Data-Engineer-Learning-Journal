@@ -1,0 +1,63 @@
+Reflection on Storage Solutions: HDFS, Key-Value Stores, and Parquet
+    1. HDFS (Hadoop Distributed File System):
+        ◦ Use Case: Ideal for storing and processing large volumes of unstructured or semi-structured data (e.g., logs, sensor data).
+        ◦ Impact: Enables scalable storage and distributed processing, which is critical for big data analytics. However, it may not be optimal for low-latency queries.
+        ◦ Strategic Objective: Supports data lakes and large-scale batch processing, aligning with long-term data retention and analysis goals.
+    2. Key-Value Stores:
+        ◦ Use Case: Best for high-speed read/write operations on unstructured data (e.g., session data, user profiles).
+        ◦ Impact: Enhances real-time data accessibility but may lack advanced querying capabilities.
+        ◦ Strategic Objective: Supports applications requiring low-latency access, such as e-commerce or real-time recommendations.
+    3. Parquet:
+        ◦ Use Case: Optimized for structured data and columnar storage, ideal for analytics workloads.
+        ◦ Impact: Improves query performance and reduces storage costs due to efficient compression and encoding.
+        ◦ Strategic Objective: Enhances analytics capabilities, especially for business intelligence and reporting.
+Example Data Challenge:
+    • Challenge: Storing and analyzing large volumes of structured customer transaction data for real-time insights and historical trend analysis.
+    • Proposed Solution: Use Parquet for structured data storage in a data lake, combined with a key-value store for real-time access to frequently queried data (e.g., customer profiles).
+    • Benefits: Improved query performance, cost efficiency, and scalability.
+    • Limitations: Requires careful schema design and may involve additional complexity in data pipeline management.
+Stakeholder for Feedback: Chief Data Officer (CDO) or Head of Analytics.
+
+Consolidation Exercise: Data Lake, Data Warehouse, or ODS
+Scenario: A retail company wants to consolidate customer data from multiple sources (e.g., online, in-store, and mobile app) for a 360-degree view of customer behavior.
+    • Data Lake: Suitable for storing raw, unstructured data from diverse sources. Ideal for exploratory analysis and machine learning.
+    • Data Warehouse: Best for structured data and business intelligence, enabling fast querying and reporting.
+    • ODS (Operational Data Store): Useful for real-time operational reporting and integration of transactional data.
+Choice: A hybrid approach using a data lake for raw data storage and a data warehouse for structured analytics.
+Stakeholder for Perspective: Head of Business Intelligence or IT Director.
+
+Reflection on Storage Cost Trends and HR Data
+    • Trend: The dramatic decrease in storage costs has enabled organizations to store vast amounts of data cost-effectively.
+    • Impact on HR: HR departments can now leverage data-driven decision-making for talent acquisition, employee engagement, and performance analysis.
+    • Replication in Other Sectors: Similar approaches can be applied in marketing (customer analytics), operations (supply chain optimization), and finance (risk modeling).
+Stakeholder for Insights: HR Analytics Manager or Chief People Officer.
+
+Data Sources on Competitive Trends
+    1. Google Dataset Search:
+        ◦ Example: "Retail industry sales data" or "Competitor market share data."
+        ◦ Dataset Size: ~10GB to 1TB, depending on granularity.
+        ◦ Update Frequency: Monthly or quarterly.
+        ◦ Storage Cost: ~200–200–2,000/year (based on cloud storage pricing).
+    2. Data Marketplaces:
+        ◦ Example: AWS Data Exchange, Snowflake Data Marketplace.
+        ◦ Dataset Size: Varies widely (e.g., 5GB to 500GB).
+        ◦ Update Frequency: Real-time to monthly.
+        ◦ Storage Cost: ~100–100–1,500/year.
+
+Relational Databases in the Organisation
+    • Current State: Identify the number of relational databases (e.g., 5 databases for CRM, ERP, HR, Finance, and Inventory).
+    • Example Improvement: Restructuring customer data in the CRM database to reduce redundancy and improve query performance.
+    • Expected Benefits: Faster reporting, better data integrity, and reduced storage costs.
+    • Stakeholder for Insights: Database Administrator or IT Manager.
+
+Data Storage Strategy Analysis
+    • Current Strategy: On-premise storage for sensitive data, cloud storage for less sensitive data.
+    • Proposed Shift: Hybrid storage solution, combining on-premise for compliance-sensitive data and cloud for scalability and cost efficiency.
+    • Benefits: Improved scalability, cost savings, and disaster recovery.
+    • Challenges: Data security, integration complexity, and potential latency issues.
+    • Stakeholder for Discussion: Chief Information Security Officer (CISO) or Cloud Architect.
+
+Key Takeaways
+    1. Storage Solutions: Choose based on data type, volume, and query requirements.
+    2. Stakeholder Engagement: Collaborate with relevant stakeholders to align storage strategies with business goals.
+    3. Cost and Efficiency: Leverage cost-effective storage solutions to enable data-driven decision-making across departments.
