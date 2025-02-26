@@ -1,0 +1,15 @@
+
+        What is the usability score of this dataset and is it “good” or “bad”? 8.82 - good
+        How is this usability score calculated? Completeness, Credbilty, Compaitbility
+        What are the two credibility issues with this dataset and why are they important?Source/Provenance & Update frequency
+        How many columns does this dataset have? 35
+        What is the licence for this dataset and how would you summarise the usage rights in your own words?Open Database
+Why does using compression aid sustainability and net-zero goals? Using compression aids sustainability and net-zero goals primarily through improved efficiency and reduced resource consumption
+
+    'YearsSinceLastPromotion': The value '0' is ambiguous and could mean either a recent promotion or no promotion at all.
+
+    'Over18' and 'OverTime': The 'Over18' column is redundant as it contains only 'Y', while 'OverTime' is useful but highlights the redundancy of 'Over18'.
+
+    'MonthlyIncome' and 'MonthlyRate': Potential issues include inconsistencies, outliers, and unclear definitions.
+
+    'EmployeeNumber': Validation should focus on uniqueness, completeness, format consistency, and referential integrity.
