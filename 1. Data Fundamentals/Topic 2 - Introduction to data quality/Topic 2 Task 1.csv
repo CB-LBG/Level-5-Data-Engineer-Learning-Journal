@@ -1,0 +1,5 @@
+﻿This document was created from a publicly available dataset at https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset/data
+
+- Columns were retained as per the original dataset.
+- Only the columns 'EmployeeNumber' and 'JobSatisfaction' were retained for analysis.
+- No columns were renamed; original column names were preserved.
