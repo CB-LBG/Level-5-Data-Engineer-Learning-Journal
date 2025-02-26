@@ -1,0 +1,85 @@
+Objectives
+    1. Understand the different data storage options available, including file systems and relational databases.
+    2. Compare and contrast on-premise vs. cloud storage solutions.
+    3. Explore the basics of file systems, relational databases, and non-relational databases.
+    4. Learn about data models, schemas, and SQL (Structured Query Language).
+    5. Gain practical experience with basic SQL commands for creating, updating, and querying databases.
+
+Key Concepts
+    1. Data Storage Options:
+        ◦ File Systems: Basic form of data storage, organizing files and directories hierarchically. Examples include text files (CSV, logs) and binary files (images, videos).
+        ◦ Relational Databases (RDBMS): Tabular structures with predefined schemas, using rows and columns. Tables are interlinked through relationships.
+        ◦ Non-Relational Databases (NoSQL): Designed for unstructured or semi-structured data, such as key-value stores, document stores, and column-family stores.
+    2. On-Premise vs. Cloud Storage:
+        ◦ On-Premise: Full control over data, higher initial costs (CAPEX), but lower ongoing costs (OPEX). Limited scalability and flexibility.
+        ◦ Cloud Storage: Scalable, cost-efficient, and flexible. Managed by third-party providers, reducing administrative overhead. Examples include AWS S3, Google Cloud Storage, and Azure.
+    3. File Systems:
+        ◦ Text Files: Human-readable formats like CSV, JSON, and XML.
+        ◦ Binary Files: Non-human-readable formats like images, videos, and executables.
+        ◦ Metadata: Data about the file, such as size, permissions, and last modified date.
+    4. Relational Databases:
+        ◦ Tables: Consist of rows (records) and columns (attributes).
+        ◦ Primary Key: Unique identifier for each record in a table.
+        ◦ Foreign Key: A column in one table that references the primary key in another table, establishing relationships between tables.
+    5. SQL (Structured Query Language):
+        ◦ Data Manipulation Language (DML): Commands like SELECT, INSERT, UPDATE, and DELETE for querying and modifying data.
+        ◦ Data Definition Language (DDL): Commands like CREATE, ALTER, and DROP for defining and modifying database structures.
+    6. Data Models:
+        ◦ Conceptual Model: High-level representation of entities and their relationships.
+        ◦ Logical Model: Defines tables, columns, and relationships.
+        ◦ Physical Model: Specifies how data is stored on disk, including data types and constraints.
+    7. Cloud Storage Types:
+        ◦ Block Storage: Divides data into fixed-size chunks (blocks) for high-performance applications like databases.
+        ◦ File Storage: Organizes data hierarchically using folders and directories, ideal for shared storage.
+        ◦ Object Storage: Stores data as objects with unique identifiers, suitable for unstructured data like images and videos.
+
+Questions to Explore
+    1. Data Storage:
+        ◦ Why are businesses storing more data than ever before? (e.g., cheaper storage, data as an asset, scalability)
+        ◦ What are the pros and cons of on-premise vs. cloud storage solutions?
+        ◦ What are the common types of data storage systems? (e.g., data warehouses, data lakes, operational data stores)
+    2. File Systems:
+        ◦ What are the differences between text and binary files?
+        ◦ How does metadata help in managing files?
+        ◦ What are the advantages of using a file system over a database, and vice versa?
+    3. Relational Databases:
+        ◦ What is the difference between a primary key and a foreign key?
+        ◦ How do relational databases enforce data integrity through constraints?
+        ◦ What are the benefits of using a relational database over a file system?
+    4. SQL:
+        ◦ What are the basic SQL commands for creating, updating, and querying databases?
+        ◦ How do DML and DDL differ in their use and purpose?
+        ◦ What are some common SQL constraints, and how do they ensure data integrity?
+    5. Cloud Storage:
+        ◦ What are the different types of cloud storage, and when should each be used?
+        ◦ How does cloud storage handle scalability and redundancy compared to on-premise solutions?
+        ◦ What are the security considerations when using cloud storage?
+    6. Data Models:
+        ◦ What is the difference between a conceptual, logical, and physical data model?
+        ◦ How do data models help in designing efficient databases?
+        ◦ What are the key components of a relational data model?
+
+Practical Exercises
+    1. File System Navigation:
+        ◦ Use command-line tools (e.g., PowerShell, Terminal) to navigate and manipulate files and directories.
+        ◦ Practice commands like ls, cd, mkdir, rm, and cp.
+    2. SQL Practice:
+        ◦ Create a table using SQL commands (CREATE TABLE).
+        ◦ Insert, update, and delete records using INSERT, UPDATE, and DELETE.
+        ◦ Query data using SELECT and apply filters with WHERE.
+    3. Cloud Storage Exploration:
+        ◦ Compare block storage, file storage, and object storage using examples from AWS, Google Cloud, or Azure.
+        ◦ Explore the differences between data warehouses, data lakes, and data lakehouses.
+
+Reflection
+    • What are the key differences between file systems and databases?
+    • How does cloud storage address the limitations of on-premise solutions?
+    • What are the advantages of using SQL for data manipulation and definition?
+    • How do data models help in organizing and structuring data effectively?
+
+Next Steps
+    • Explore advanced SQL queries, including joins, aggregations, and subqueries.
+    • Dive deeper into non-relational databases (NoSQL) and their use cases.
+    • Investigate data encryption and security practices for databases and cloud storage.
+    • Practice designing and implementing a relational database schema for a real-world scenario.
+Topic 1 - Storing and querying data
