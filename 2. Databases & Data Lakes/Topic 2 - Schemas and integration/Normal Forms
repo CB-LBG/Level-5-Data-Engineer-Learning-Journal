@@ -1,0 +1,15 @@
+-1st Normal Form 
+Each column should have only one value (no lists or multiple items in a single cell).
+Each column should store only one type of data (e.g., don’t mix numbers and text).
+Pros: Structured.
+Cons: May have repetition.
+-2nd Normal Form 
+Must already be in 1st normal form.
+All data should depend on the whole primary key, not just part of it.
+Pros: Reduces duplication.
+Cons: More tables
+-3rd Normal Form 
+It must already be in 2nd normal form.
+No column should depend on another column unless it’s the primary key.
+Pros:  No unnecessary duplication
+Cons: More tables need to be joined.
