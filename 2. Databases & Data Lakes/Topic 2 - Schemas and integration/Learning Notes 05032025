@@ -1,0 +1,86 @@
+Objectives
+    1. Understand the differences between 1st, 2nd, and 3rd Normal Forms and Denormalized Data.
+    2. Explore the pros and cons of each approach.
+    3. Determine which normalization form is most suitable for different scenarios.
+
+Key Concepts
+    1. 1st Normal Form (1NF):
+        ◦ Definition: A table is in 1NF if:
+            ▪ Each column contains atomic (indivisible) values.
+            ▪ No repeating groups or arrays.
+        ◦ Example:
+            ▪ Before 1NF: Orders (OrderID, Product1, Product2)
+            ▪ After 1NF: Orders (OrderID, Product)
+        ◦ Pros:
+            ▪ Eliminates duplicate data.
+            ▪ Simplifies data structure.
+        ◦ Cons:
+            ▪ May require more tables and joins.
+    2. 2nd Normal Form (2NF):
+        ◦ Definition: A table is in 2NF if:
+            ▪ It is in 1NF.
+            ▪ All non-key attributes are fully dependent on the primary key (no partial dependency).
+        ◦ Example:
+            ▪ Before 2NF: Orders (OrderID, ProductID, ProductName)
+            ▪ After 2NF: Orders (OrderID, ProductID) and Products (ProductID, ProductName)
+        ◦ Pros:
+            ▪ Reduces redundancy.
+            ▪ Improves data integrity.
+        ◦ Cons:
+            ▪ Increases complexity with more tables.
+    3. 3rd Normal Form (3NF):
+        ◦ Definition: A table is in 3NF if:
+            ▪ It is in 2NF.
+            ▪ No transitive dependencies (non-key attributes depend only on the primary key).
+        ◦ Example:
+            ▪ Before 3NF: Orders (OrderID, CustomerID, CustomerName)
+            ▪ After 3NF: Orders (OrderID, CustomerID) and Customers (CustomerID, CustomerName)
+        ◦ Pros:
+            ▪ Further reduces redundancy.
+            ▪ Ensures data consistency.
+        ◦ Cons:
+            ▪ Requires more joins, which can impact performance.
+    4. Denormalized Data:
+        ◦ Definition: Combining tables to reduce the number of joins, often at the cost of redundancy.
+        ◦ Example:
+            ▪ Denormalized Table: Orders (OrderID, ProductID, ProductName, CustomerName)
+        ◦ Pros:
+            ▪ Faster read performance for queries.
+            ▪ Simplifies complex queries.
+        ◦ Cons:
+            ▪ Increases redundancy and storage requirements.
+            ▪ Risk of data anomalies (e.g., update, insert, delete anomalies).
+
+Comparison of Normal Forms vs. Denormalization
+Aspect	Normalization	Denormalization
+Redundancy	Minimized	Increased
+Data Integrity	High	Lower (risk of anomalies)
+Query Performance	Slower (due to joins)	Faster (fewer joins)
+Complexity	Higher (more tables)	Lower (fewer tables)
+Use Case	OLTP (Transactional Systems)	OLAP (Analytical Systems)
+
+Pros and Cons Summary
+    • Normalization:
+        ◦ Pros: Reduces redundancy, ensures data integrity.
+        ◦ Cons: Slower queries, more complex design.
+    • Denormalization:
+        ◦ Pros: Faster queries, simpler design.
+        ◦ Cons: Redundancy, risk of data anomalies.
+
+Which is Best?
+    • Normalization is best for transactional systems (OLTP) where data integrity and consistency are critical (e.g., banking systems, e-commerce platforms).
+    • Denormalization is best for analytical systems (OLAP) where read performance is prioritized (e.g., data warehouses, reporting systems).
+    • The "best" approach depends on the use case and system requirements.
+
+Questions
+    1. What is the main difference between 1NF and 2NF?
+    2. Why might an organization prefer a star schema over a snowflake schema for reporting?
+    3. What are the risks of using denormalized data in a transactional system?
+    4. How does 3NF improve data integrity compared to 2NF?
+    5. In what scenarios would you prioritize query performance over data integrity?
+
+Useful Resource
+    • What is Database Normalization in SQL Server?
+
+
+
