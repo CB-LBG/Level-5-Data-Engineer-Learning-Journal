@@ -1,0 +1,127 @@
+Objectives:
+    1. Understand the difference between formative and portfolio assessments.
+    2. Learn about SQL joins, including inner joins, left/right joins, cross joins, and unions.
+    3. Explore SQL aggregation functions, group by clauses, and the HAVING clause.
+    4. Understand the basics of Data Definition Language (DDL) and Data Manipulation Language (DML).
+    5. Learn about indexing and views in SQL.
+
+Key Concepts:
+    1. Formative vs. Portfolio Assessments:
+        ◦ Formative Assessments: Provide feedback to improve skills but are not mandatory for passing the final assessment.
+        ◦ Portfolio Assessments: Essential for the final assessment, where evidence of skills is submitted for evaluation.
+    2. SQL Joins:
+        ◦ Inner Join: Returns only rows with matching values in both tables.
+        ◦ Left/Right Join: Returns all rows from one table and matching rows from the other. Non-matching rows contain NULL.
+        ◦ Cross Join: Creates a Cartesian product of two tables, pairing each row from the first table with every row from the second.
+        ◦ Union: Combines the results of two queries vertically, provided they have the same number of columns and data types.
+    3. Aggregation and Grouping:
+        ◦ Aggregation Functions: COUNT, SUM, AVG, MIN, MAX.
+        ◦ GROUP BY: Groups rows that have the same values into summary rows.
+        ◦ HAVING: Filters groups based on aggregate conditions (e.g., HAVING SUM(quantity) > 100).
+    4. Data Definition Language (DDL):
+        ◦ CREATE TABLE: Defines a new table and its columns.
+        ◦ ALTER TABLE: Modifies an existing table (e.g., adding or dropping columns).
+        ◦ DROP TABLE: Deletes a table and its data.
+        ◦ Indexes: Improve query performance by optimizing data retrieval. Indexes are created on columns frequently used in WHERE clauses or joins.
+    5. Views:
+        ◦ Views: Virtual tables created by SQL queries. They allow users to see a subset of data without accessing the entire table.
+        ◦ Materialized Views: Pre-computed views that store the result of a query for faster access.
+
+Questions:
+    1. Formative vs. Portfolio Assessments:
+        ◦ What is the main purpose of formative assessments?
+        ◦ How do portfolio assessments differ from formative assessments in terms of their role in the final evaluation?
+    2. SQL Joins:
+        ◦ What is the difference between an inner join and a left join?
+        ◦ When would you use a cross join in a real-world scenario?
+        ◦ How does a union differ from a join?
+    3. Aggregation and Grouping:
+        ◦ What is the difference between WHERE and HAVING?
+        ◦ How does the GROUP BY clause work with aggregation functions?
+    4. DDL and Indexing:
+        ◦ What are the key differences between CHAR and VARCHAR data types?
+        ◦ Why is indexing important, and what are the potential downsides of over-indexing?
+    5. Views:
+        ◦ What is the purpose of a view in SQL?
+        ◦ What are the limitations of updating data through a view?
+
+Transcript Highlights:
+    1. Formative and Portfolio Assessments:
+        ◦ Formative assessments provide feedback but are not mandatory for passing the final assessment.
+        ◦ Portfolio assessments are essential for the final evaluation and require submitting evidence of skills.
+    2. SQL Joins:
+        ◦ Inner joins return only matching rows, while left/right joins include all rows from one table and matching rows from the other.
+        ◦ Cross joins create all possible combinations of rows from two tables.
+        ◦ Unions combine the results of two queries vertically.
+    3. Aggregation and Grouping:
+        ◦ Aggregation functions like SUM, COUNT, and AVG are used to summarize data.
+        ◦ The GROUP BY clause groups rows based on specified columns, and the HAVING clause filters these groups.
+    4. DDL and Indexing:
+        ◦ DDL commands like CREATE TABLE, ALTER TABLE, and DROP TABLE are used to define and modify database structures.
+        ◦ Indexes improve query performance but can increase storage and slow down data updates.
+    5. Views:
+        ◦ Views are virtual tables created by SQL queries, allowing users to see a subset of data.
+        ◦ Materialized views store the result of a query for faster access but may contain outdated data.
+
+Practical Examples:
+    1. SQL Joins:
+        ◦ Inner Join Example:
+          sql
+          Copy
+          SELECT sales.*, date.holiday
+          FROM sales
+          INNER JOIN date ON sales.date_id = date.date_id;
+        ◦ Left Join Example:
+          sql
+          Copy
+          SELECT sales.*, users.city
+          FROM sales
+          LEFT JOIN users ON sales.buyer_id = users.user_id;
+    2. Aggregation and Grouping:
+        ◦ Group By Example:
+          sql
+          Copy
+          SELECT city, SUM(price_paid) AS total_revenue
+          FROM sales
+          GROUP BY city
+          ORDER BY total_revenue DESC;
+        ◦ Having Example:
+          sql
+          Copy
+          SELECT product, SUM(quantity) AS total_quantity
+          FROM sales
+          GROUP BY product
+          HAVING SUM(quantity) > 100;
+    3. DDL and Indexing:
+        ◦ Create Table Example:
+          sql
+          Copy
+          CREATE TABLE person (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              name VARCHAR(100),
+              age INT CHECK (age >= 18),
+              city VARCHAR(100)
+          );
+        ◦ Create Index Example:
+          sql
+          Copy
+          CREATE INDEX sales_date_index ON sales(date_id);
+    4. Views:
+        ◦ Create View Example:
+          sql
+          Copy
+          CREATE VIEW richmond_users AS
+          SELECT * FROM users WHERE city = 'Richmond';
+
+Key Takeaways:
+    • Formative assessments are for feedback, while portfolio assessments are mandatory for final evaluation.
+    • SQL joins are essential for combining data from multiple tables, with different types serving different purposes.
+    • Aggregation functions and grouping allow for summarizing data, while the HAVING clause filters grouped data.
+    • DDL commands are used to define and modify database structures, and indexing improves query performance.
+    • Views provide a way to simplify data access and restrict access to sensitive information.
+
+Next Steps:
+    • Practice writing SQL queries with different types of joins.
+    • Experiment with aggregation functions and the GROUP BY and HAVING clauses.
+    • Explore creating and modifying tables using DDL commands.
+    • Understand the impact of indexing on query performance by creating and testing indexes.
