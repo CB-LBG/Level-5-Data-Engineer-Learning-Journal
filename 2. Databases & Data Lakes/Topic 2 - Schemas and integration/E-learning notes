@@ -1,0 +1,26 @@
+1. List of Databases Encountered
+    • Oracle
+    • SQL Server
+2. Open-Source Status
+    • Oracle: Not open-source
+    • SQL Server: Not open-source
+3. Deployment Models (Cloud vs. On-Premise)
+    • Oracle:
+        ◦ Currently transitioning from on-premise to cloud-based (Oracle Azure).
+    • SQL Server:
+        ◦ Supports both on-premise and cloud-based deployments.
+4. Internal Training Availability
+    • Oracle:
+        ◦ Yes, internal training is available.
+        ◦ Topics covered:
+            ▪ Oracle Database SQL Plus
+            ▪ Oracle importing and exporting data
+    • SQL Server:
+        ◦ Yes, internal training is available.
+        ◦ Topics covered:
+            ▪ A practical introduction to querying databases
+
+Key Takeaways:
+    • Both Oracle and SQL Server are proprietary (not open-source).
+    • Oracle is transitioning to the cloud, while SQL Server is already available in both on-premise and cloud environments.
+    • Internal training resources are available for both databases, focusing on foundational and practical skills. 
