@@ -1,0 +1,109 @@
+Learning Notes: Database Management & Optimization
+Objectives
+
+    Understand data profiling and its role in assessing data quality.
+
+    Learn techniques for data archiving to optimize performance and cost.
+
+    Explore query profiling and optimization strategies.
+
+    Review recovery models and security best practices (e.g., SQL injection prevention).
+
+    Analyze causes and mitigation of database outages.
+
+Key Concepts
+1. Data Profiling
+
+    Definition: Examining data to understand structure, content, and quality (e.g., missing values, outliers).
+
+    Techniques:
+
+        Statistical analysis (min/max, frequency distributions).
+
+        Metadata validation (e.g., checking column descriptions match actual data).
+
+        Rule-based checks (e.g., ensuring postal codes align with country fields).
+
+    Tools:
+
+        In-house scripts (e.g., SQL queries for uniqueness checks).
+
+        Third-party tools (e.g., IBM InfoSphere, Talend).
+
+    Outcome: Improved data quality, better decision-making, and compliance.
+
+2. Data Archiving
+
+    Purpose: Move inactive data to cheaper storage while maintaining accessibility.
+
+    Approaches:
+
+        Time-based: Archive data older than X years (e.g., financial records after 7 years).
+
+        Usage-based: Archive rarely queried data (e.g., historical customer transactions).
+
+    Benefits:
+
+        Cost savings (reduced storage expenses).
+
+        Performance gains (smaller active datasets = faster queries).
+
+    Cloud Solutions: AWS Glacier, Google Coldline (low-cost archival storage).
+
+3. Query Optimization
+
+    Indexing:
+
+        Use indexes on frequently filtered/joined columns.
+
+        Avoid over-indexing (slows inserts/updates).
+
+    Query Rewriting:
+
+        Replace subqueries with joins where possible.
+
+        Use EXPLAIN (MySQL) or execution plans (SQL Server) to identify bottlenecks.
+
+    Partitioning: Split large tables by logical segments (e.g., date ranges) for faster access.
+
+4. Recovery Models
+
+    Simple Recovery: Restores to latest backup (limited point-in-time recovery).
+
+    Full Recovery: Uses transaction logs for precise restoration (e.g., undo a mistaken delete).
+
+    Cloud Tools: AWS RDS snapshots, automated backups.
+
+5. Security & Outages
+
+    SQL Injection: Malicious input manipulation (e.g., ' OR 1=1 --).
+
+        Prevention: Parameterized queries, input sanitization.
+
+    Outage Causes:
+
+        Human error (70% of outages, e.g., misconfigurations).
+
+        Mitigation: Automated checks, post-mortem analyses.
+
+Key Questions
+
+    How does data profiling differ between relational and NoSQL databases?
+
+    What are the trade-offs between simple and full recovery models?
+
+    Why might denormalization improve query performance despite violating normalization rules?
+
+    How can partitioning reduce query execution time?
+
+Actionable Takeaways
+
+    Profile data early: Use SQL queries to check for duplicates, missing values, and outliers.
+
+    Archive strategically: Automate archiving based on usage/retention policies.
+
+    Optimize queries: Test with EXPLAIN, avoid SELECT *, and use covered indexes.
+
+    Secure databases: Restrict user permissions and sanitize inputs.
+
+Next Steps: Review query optimization examples and practice indexing strategies.
