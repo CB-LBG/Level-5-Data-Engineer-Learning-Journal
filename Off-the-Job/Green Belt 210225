@@ -1,0 +1,150 @@
+Green Belt Course Learning Notes
+Day 1: Introduction to Lean Six Sigma & Define Phase
+
+    Organizational Culture in Change Management
+
+        Success depends on trust, sustainability, inclusivity, and boldness.
+
+        People-first approach ensures continuous improvement (CI) adoption.
+
+    Lean vs. Six Sigma
+
+        Lean: Eliminates waste (Toyota Production System).
+
+        Six Sigma: Reduces variation (Motorola).
+
+        Lean Sigma: Combines both for efficiency and quality.
+
+    DMAIC Framework
+
+        Define: Problem, scope, goals (Project Charter).
+
+        Measure: Baseline data, process mapping.
+
+        Analyze: Root cause analysis.
+
+        Improve: Solution testing.
+
+        Control: Sustain gains.
+
+    Tools & Techniques
+
+        SIPOC Diagram: High-level process mapping (Suppliers, Inputs, Process, Outputs, Customers).
+
+        In/Out of Frame: Clarifies project scope.
+
+        Stakeholder Management: Engage early to avoid resistance.
+
+Day 2: Measure Phase – Data & Process Analysis
+
+    Customer Requirements (CTQ Trees)
+
+        Translate vague needs into measurable Critical-to-Quality (CTQ) metrics.
+
+        Example: "Efficient airport transit" → Measurable transit time.
+
+    Measurement Plan
+
+        Define Y (output) and X (input) metrics.
+
+        Use operational definitions for consistency.
+
+    Data Types
+
+        Continuous: Time, weight.
+
+        Discrete: Defect counts.
+
+    Tools & Techniques
+
+        Fishbone Diagram: Identify root causes (e.g., airport delays).
+
+        Process Mapping: Visualize current state (e.g., check-in → boarding).
+
+        MSA (Gauge R&R): Assess measurement system variation.
+
+        Process Yields: First-pass vs. rolled throughput yield.
+
+Day 3: Analyze Phase – Root Causes & Statistics
+
+    Statistics Basics
+
+        Standard Deviation (σ): Measures data spread.
+
+            Sample: STDEV.S; Population: STDEVP.
+
+        Normal Distribution: 68% (±1σ), 95% (±2σ), 99% (±3σ).
+
+    Process Analysis
+
+        Traffic Light Technique:
+
+            Green: Value-adding.
+
+            Amber: Necessary non-value-adding.
+
+            Red: Waste.
+
+        TIM WOOD: 7 wastes (Transport, Inventory, Motion, Waiting, Overproduction, Overprocessing, Defects).
+
+    Root Cause Analysis
+
+        5 Whys: Drill down to root cause.
+
+        Fishbone Diagram: Validate hypotheses with data.
+
+    Idea Generation
+
+        Brainstorming: Mind maps, negative brainstorming.
+
+        Prioritization:
+
+            PACE Matrix: Ease vs. benefit.
+
+            Pugh Matrix: Compare solutions.
+
+Day 4: Improve & Control Phases
+
+    Improvement Phase
+
+        Pilot Testing: Small-scale trials.
+
+        FMEA: Proactively identify failure modes.
+
+    Control Phase
+
+        Control Plans: Document new processes.
+
+        Control Charts: Monitor stability (X-bar R, I-MR).
+
+        SOPs: Standardize improvements.
+
+    Post-Implementation
+
+        Stop/Start/Continue: Review lessons learned.
+
+        Recognize Contributors: Celebrate team efforts.
+
+Exam Preparation (Day 5)
+
+    Format: 30 MCQs, 90% pass, 45 minutes.
+
+    Focus Areas:
+
+        DMAIC stages & tools.
+
+        Statistical concepts (σ, normal distribution).
+
+        Case study applications (e.g., airport check-in).
+
+Key Takeaways
+
+    Define: Clearly outline the problem.
+
+    Measure: Collect good data.
+
+    Analyze: Find root causes.
+
+    Improve: Test solutions.
+
+    Control: Lock in gains.
