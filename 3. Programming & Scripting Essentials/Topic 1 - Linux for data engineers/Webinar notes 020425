@@ -1,0 +1,111 @@
+Learning Notes: Introduction to Linux for Data Engineers
+Objectives
+
+By the end of this module, learners will:
+
+    Understand the role of Linux in data engineering and server management.
+
+    Navigate the Linux file system hierarchy and execute basic commands.
+
+    Apply permissions and security principles (e.g., chmod, sudo).
+
+    Write simple bash scripts for automation.
+
+    Recognize Linux distributions (Ubuntu, Fedora) and their use cases.
+
+    Grasp core concepts like "everything is a file" and kernel functionality.
+
+Key Concepts
+
+    Linux Basics
+
+        Distributions (Distros): Ubuntu, Fedora, Debian. All share the Linux kernel but differ in tools/packaging.
+
+        Kernel: Core component managing hardware/software interactions.
+
+        Shell: Command-line interface (e.g., Bash) for executing commands.
+
+    File System Structure
+
+        Root (/): Base directory. Key subdirectories:
+
+            /bin: Essential user binaries (e.g., ls, cp).
+
+            /home: User-specific files.
+
+            /etc: Configuration files.
+
+            /dev: Hardware devices (e.g., disks, USB drives).
+
+            /var: Logs, databases, and variable data.
+
+        Everything is a file: Hardware, processes, and directories are treated as files.
+
+    Permissions & Security
+
+        Users/Groups:
+
+            root: Superuser with full system access.
+
+            Regular users operate with restricted privileges.
+
+        File Permissions:
+
+            Format: -rwxr--r-- (User/Group/Others).
+
+            chmod: Change permissions (e.g., chmod 755 script.sh).
+
+        Principle of Least Privilege: Restrict access to minimize risks.
+
+    Essential Commands
+
+        ls -l: List files with details.
+
+        sudo: Execute commands as root.
+
+        cd, pwd: Navigate directories.
+
+        cp, mv, rm: Copy, move, delete files (Caution: rm -r deletes recursively!).
+
+        man [command]: Access manual pages.
+
+    Scripting Basics
+
+        Bash Scripts: Automate tasks using commands/variables.
+
+        Example:
+        bash
+        Copy
+
+        #!/bin/bash
+        echo "Hello, $USER!"
+        echo "Today is $(date)"
+
+Questions for Review
+
+    File System: What is the purpose of /etc vs. /var?
+
+    Permissions: How would you grant read/write access to a group for data.txt?
+
+    Security: Why should you avoid running processes as root?
+
+    Commands: What does ls -a do, and when would you use it?
+
+    Philosophy: Explain the statement "Everything is a file" in Linux.
+
+Practical Exercise
+
+Task: Create a bash script that:
+
+    Lists all files in the current directory.
+
+    Creates a backup folder.
+
+    Copies all .txt files into the backup folder.
+    Hint: Use mkdir, cp, and wildcards (*.txt).
+
+Additional Resources:
+
+    Practice Linux online: DistroSea or JS/UNIX.
+
+    Explore chmod calculator: chmod Calculator.
