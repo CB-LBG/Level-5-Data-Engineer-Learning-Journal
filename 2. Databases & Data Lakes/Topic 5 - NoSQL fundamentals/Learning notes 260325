@@ -1,0 +1,99 @@
+Objectives
+
+    Understand Formative Assessments & Portfolio Preparation:
+
+        Differentiate between formative tasks (practice) and portfolio tasks (evidence for final assessment).
+
+        Learn how to handle confidential work data (e.g., anonymizing, avoiding screenshots).
+
+        Practice writing about projects in an interview-style format (methodology, insights, challenges).
+
+    Explore NoSQL Databases:
+
+        Compare NoSQL (flexible schema, scalability) vs. SQL (rigid schema, relational).
+
+        Identify use cases for NoSQL types: document (MongoDB), key-value (Redis), column-based (Cassandra), graph (Neo4j).
+
+        Practice querying MongoDB (collections, documents, JSON/BSON structure).
+
+    Introduction to Data Pipelines:
+
+        Define stages: extract → transform → load → analyze → visualize.
+
+        Discuss automation, scalability, and resilience in pipeline design.
+
+Key Concepts
+
+    Formative & Portfolio Tasks:
+
+        Formatives: Practice tasks with feedback (e.g., cleaning a dataset, describing methodology).
+
+        Portfolios: Work-based evidence for final assessment (e.g., real projects with anonymized data).
+
+        Tip: Use public datasets (Kaggle, government data) if workplace data is restricted.
+
+    NoSQL Databases:
+
+        Document Stores (e.g., MongoDB):
+
+            Store JSON/BSON documents (flexible schema).
+
+            Use cases: Nested data, rapid iteration (e.g., social media posts).
+
+        Key-Value Stores (e.g., Redis):
+
+            Optimized for speed (in-memory storage).
+
+            Use cases: Caching, session management.
+
+        Column-Based (e.g., Cassandra):
+
+            Efficient for large-scale analytics (e.g., time-series data).
+
+        Graph Databases (e.g., Neo4j):
+
+            Map relationships (e.g., social networks, fraud detection).
+
+    Data Pipelines:
+
+        ETL/ELT: Extract, transform, load (or load first, then transform).
+
+        Resilience: Handle schema changes, missing data, and scaling.
+
+        Example: NLP pipeline (tokenization → preprocessing → model training).
+
+Questions for Reflection
+
+    Formative/Portfolio:
+
+        How would you describe a project you’ve worked on without revealing sensitive details?
+
+        What metrics or methodologies would you highlight to demonstrate data cleaning/analysis?
+
+    NoSQL:
+
+        When would you choose a document database over a relational one?
+
+        How does a graph database improve recommendation engines compared to SQL joins?
+
+    Data Pipelines:
+
+        What steps would you automate in a pipeline for real-time sales data?
+
+        How would you ensure data quality during transformation?
+
+Key Takeaways
+
+    Confidentiality: Describe work projects generically (e.g., “a retail dataset” vs. “Company X’s sales data”).
+
+    NoSQL Flexibility: Use JSON for nested data; prioritize scalability for large/unstructured datasets.
+
+    Pipeline Design: Focus on automation, error handling, and scalability.
+
+Next Steps:
+
+    Practice MongoDB queries using Google Colab or a local setup.
+
+    Explore public datasets (e.g., Kaggle, UK Gov Data) for formative tasks.
+
+    Draft a portfolio entry describing a data project (methodology, tools used, outcomes).
