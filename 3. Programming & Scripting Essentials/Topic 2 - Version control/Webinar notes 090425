@@ -1,0 +1,85 @@
+Objectives
+
+    Understand the purpose and benefits of formative assessments in the learning process.
+
+    Clarify submission guidelines, deadlines, and feedback mechanisms for formative work.
+
+    Grasp the fundamentals of version control systems (VCS), focusing on Git and its role in DevOps.
+
+    Learn key Git workflows: cloning, committing, branching, merging, and resolving conflicts.
+
+    Explore tools like GitHub/GitLab and their integration with Git for collaboration.
+
+    Practice basic Git commands and visualize workflows using interactive platforms.
+
+Key Concepts
+
+    Formative Assessments
+
+        Purpose: Practice writing structured responses, gather feedback, and improve before summative assignments.
+
+        Flexibility: Optional submission with grace periods; feedback focuses on strengths, improvements, and future preparation.
+
+        Word Count: Adhere to limits (e.g., 500 words ±10%); excessive lengths may receive warnings.
+
+    Version Control & Git
+
+        Why Git?:
+
+            Tracks changes, enables rollbacks, and supports collaboration without overwriting work.
+
+            Distributed system: Every user has a full repository copy, allowing offline work.
+
+        Core Workflows:
+
+            git clone: Download a repository.
+
+            git commit: Save snapshots of changes with descriptive messages.
+
+            git push/pull: Sync local and remote repositories.
+
+            git branch/checkout: Create/switch branches to isolate work.
+
+            git merge: Combine branches (may require conflict resolution).
+
+    DevOps Practices
+
+        CI/CD: Automate testing and deployment to ensure reliable updates.
+
+        Collaboration: Code reviews, pull requests, and clear commit messages enhance teamwork.
+
+    GitHub vs. GitLab
+
+        Both host repositories but differ in features (e.g., GitHub’s larger community vs. GitLab’s built-in CI/CD).
+
+    Best Practices
+
+        Avoid repositories in cloud-synced folders (e.g., OneDrive).
+
+        Use semantic versioning (e.g., v1.2.3 for major/minor/patch updates).
+
+Questions
+
+    Formative Assessments
+
+        Why might a student benefit from submitting a formative assessment even if it’s optional?
+
+        How does feedback on formative work prepare you for summative assignments?
+
+    Git & Version Control
+
+        What is the difference between git clone and git pull? When would you use each?
+
+        Explain a scenario where branching in Git prevents conflicts in a team project.
+
+    DevOps & Collaboration
+
+        How does continuous integration (CI) improve the reliability of code deployments?
+
+        Why are commit messages like “Fixed bug” less helpful than “Fix data validation error in user signup”?
+
+    Practical Application
+
+        If you encounter a merge conflict, what steps would you take to resolve it?
+
+        How does a tool like GitHub Desktop simplify Git workflows compared to the command line?
