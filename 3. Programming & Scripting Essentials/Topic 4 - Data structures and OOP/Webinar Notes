@@ -1,0 +1,86 @@
+Objectives
+    1. Recap fundamental data structures:
+        ◦ Differentiate between lists (mutable) and tuples (immutable).
+        ◦ Understand dictionaries (key-value pairs) and their use cases.
+    2. Introduce Object-Oriented Programming (OOP):
+        ◦ Define classes, objects, methods, and properties.
+        ◦ Explore core OOP principles: encapsulation, inheritance, and polymorphism.
+    3. Apply OOP concepts:
+        ◦ Create classes and instantiate objects.
+        ◦ Use methods to define object behaviors.
+    4. Introduce testing:
+        ◦ Understand unit testing and its role in validating code functionality.
+
+Key Concepts
+    1. Data Structures:
+        ◦ Lists: Mutable, defined with [].
+            ▪ Example: numbers = [1, 2, 3] (can be modified after creation).
+        ◦ Tuples: Immutable, defined with ().
+            ▪ Example: point = (10, 20) (cannot be modified after creation).
+        ◦ Dictionaries: Key-value pairs, defined with {}.
+            ▪ Example:
+              python
+        ◦ person = {  
+              "name": "John",  
+              "age": 30,  
+              "city": "New York"  
+          }  
+        ◦ Access values via keys: person["name"] returns "John".
+    • Object-Oriented Programming (OOP):
+    • Class: A blueprint for creating objects (e.g., class Car:).
+    • Object: An instance of a class (e.g., my_car = Car("Toyota")).
+    • Methods: Functions defined within a class (e.g., def start_engine(self):).
+    • Encapsulation: Restricting direct access to data (e.g., using private variables like self.__balance).
+    • Inheritance: Creating subclasses that inherit properties/methods from a parent class.
+        ◦ Example:
+          python
+        ◦ class Animal:  
+              def speak(self): pass  
+          class Dog(Animal):  
+              def speak(self): return "Woof!"  
+    • Polymorphism: Overriding methods in subclasses for different behaviors.
+    • Testing:
+    • Unit Testing: Validating individual components (e.g., functions/methods).
+        ◦ Use unittest module and assertions like self.assertEqual().
+    • Example test case:
+      python
+        ◦ def test_addition(self):  
+              self.assertEqual(self.calc.add(4, 7), 11)  
+
+Questions
+    1. Data Structures:
+        ◦ What is the key difference between a list and a tuple? Provide an example.
+        ◦ Why might you use a dictionary instead of a list for storing user profiles?
+        ◦ How would you access a nested value in a dictionary (e.g., person["address"]["city"])?
+    2. OOP:
+        ◦ Explain the purpose of the __init__ method in a class.
+        ◦ What is the role of self in Python class methods?
+        ◦ How does inheritance reduce code redundancy? Provide an example.
+    3. Testing:
+        ◦ What is the purpose of assertEqual() in unit testing?
+        ◦ How would you test a method that raises an error (e.g., division by zero)?
+
+Example Code Snippets:
+    • Creating a class:
+      python
+    • class Dog:  
+    def __init__(self, breed, color):  
+        self.breed = breed  
+        self.color = color  
+    def bark(self):  
+        return "Woof!"  
+    • Unit test for a method:
+python
+    • import unittest  
+      class TestCalculator(unittest.TestCase):  
+          def test_subtraction(self):  
+              self.assertEqual(self.calc.subtract(10, 5), 5)  
+Key Terms:
+    • Mutable: Can be changed after creation (e.g., lists).
+    • Immutable: Cannot be changed after creation (e.g., tuples).
+    • Decorator: Modifies a function/method (e.g., @staticmethod).
+
+Next Steps:
+    • Practice creating classes with methods (e.g., a BankAccount class with deposit/withdraw methods).
+    • Experiment with nested dictionaries (e.g., storing employee data with departments).
+    • Explore the unittest framework further.
