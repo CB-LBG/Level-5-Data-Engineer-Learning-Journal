@@ -1,0 +1,101 @@
+Objectives
+
+    Reinforce Pandas Skills:
+
+        Grouping, sorting, merging DataFrames.
+
+        Using regular expressions (RegEx) for data cleaning.
+
+        Handling multi-indexing and data aggregation.
+
+    Introduce Algorithmic Thinking:
+
+        Define algorithms and their role in problem-solving.
+
+        Understand pseudocode and abstraction.
+
+        Analyze efficiency and correctness in algorithm design.
+
+    Prepare for Advanced Topics:
+
+        Explore real-world applications (e.g., Google’s PageRank).
+
+        Transition to parallel programming and Spark (next session).
+
+Key Concepts
+
+    Pandas Data Manipulation:
+
+        Grouping & Aggregation:
+
+            Use groupby() with methods like mean(), sum(), size(), or custom aggregations.
+
+            Example: Calculate average height by gender:
+            python
+
+            df.groupby('gender')['height_cm'].mean()  
+
+        Sorting:
+
+            sort_values(by=['column'], ascending=False) sorts data.
+
+        Merging Data:
+
+            Use pd.merge() or join() with parameters like on, how, and suffixes.
+
+        Multi-Indexing:
+
+            Reset indices with reset_index() to simplify complex grouped data.
+
+    Regular Expressions (RegEx):
+
+        Tools like RegEx101 help test patterns.
+
+        Example: Extract email domains using re.findall(r'@(\w+\.\w+)', text).
+
+    Algorithmic Thinking:
+
+        Definition: A finite set of instructions to solve a problem.
+
+        Characteristics of Good Algorithms:
+
+            Correctness, efficiency, clarity, and finite termination.
+
+        Pseudocode: A bridge between human logic and code (e.g., steps for a loop).
+
+        Abstraction: Simplify complex problems by focusing on essentials (e.g., Google Maps directions).
+
+    Real-World Applications:
+
+        PageRank Algorithm: Ranks web pages based on link quality/quantity.
+
+        Adaptive Learning: Adjusts question difficulty based on user performance.
+
+Questions for Review
+
+    Pandas:
+
+        How would you use groupby() to find the maximum weight per gender in a DataFrame?
+
+        What is the purpose of reset_index() after grouping data?
+
+    Algorithm Design:
+
+        Write pseudocode for a loop that prints numbers 1-10.
+
+        Why is an "end condition" critical in loops? Give an example of a broken loop without one.
+
+    Concepts:
+
+        What distinguishes an algorithm from programming?
+
+        Explain abstraction using the example of a recipe.
+
+    Real-World Analysis:
+
+        How does Google’s PageRank algorithm determine a webpage’s importance?
+
+        What are potential pitfalls of an algorithm that lacks efficiency?
+
+Next Session Preview: Parallel programming with Spark and deeper algorithm optimization techniques.
+Key Tools to Explore: pyspark, efficiency analysis (time complexity).
