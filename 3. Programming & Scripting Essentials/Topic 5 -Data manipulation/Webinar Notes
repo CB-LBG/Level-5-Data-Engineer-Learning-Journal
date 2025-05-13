@@ -1,0 +1,145 @@
+Objectives
+
+    Understand the role of pandas in data manipulation:
+
+        Import and export data (CSV, Excel, JSON).
+
+        Explore core pandas structures: DataFrames (2D tables) and Series (single columns).
+
+    Clean and preprocess data:
+
+        Handle missing values (isna(), fillna(), dropna()).
+
+        Remove duplicates (drop_duplicates()).
+
+        Convert data types (astype(), pd.to_datetime()).
+
+        Filter outliers using conditional logic.
+
+    Manipulate data:
+
+        Add/remove columns.
+
+        Filter rows using Boolean indexing.
+
+        Sort, group, and aggregate data (e.g., groupby(), agg()).
+
+Key Concepts
+
+    Data Structures:
+
+        DataFrame: A 2D table with labeled rows (index) and columns.
+        python
+
+    df = pd.read_csv("data.csv")  
+    df.head()  # View first 5 rows  
+
+    Series: A single column in a DataFrame (e.g., df["column_name"]).
+
+Handling Missing Data:
+
+    Detect missing values:
+    python
+
+df.isna().sum()  # Count missing values per column  
+
+Fill missing values:
+python
+
+df["height_cm"].fillna(df["height_cm"].median(), inplace=True)  
+
+Drop rows/columns with missing values:
+python
+
+    df.dropna(inplace=True)  # Remove rows with missing data  
+
+Data Cleaning:
+
+    Remove duplicates:
+    python
+
+df.drop_duplicates(inplace=True)  
+
+Filter outliers:
+python
+
+    df = df[(df["weight_kg"] >= 40) & (df["weight_kg"] <= 200)]  
+
+Data Transformation:
+
+    Convert data types:
+    python
+
+df["birth_date"] = pd.to_datetime(df["birth_date"])  
+
+Create new columns:
+python
+
+    df["height_m"] = df["height_cm"] / 100  
+
+Filtering and Indexing:
+
+    Boolean indexing:
+    python
+
+filtered_df = df[df["gender"] == "Female"]  
+
+Use loc and iloc for row/column selection:
+python
+
+        df.loc[0, "name"]  # Access row 0, column "name"  
+        df.iloc[0, 1]      # Access row 0, column index 1  
+
+Questions
+
+    Data Cleaning:
+
+        How would you handle a column with mixed data types (e.g., numbers stored as strings)?
+
+        Why might you use fillna() with median() instead of mean() for numerical columns?
+
+    Data Manipulation:
+
+        Write code to filter rows where the weight_kg is greater than 100 and the height_cm is less than 150.
+
+        How would you rename a column from "user_id" to "id"?
+
+    Data Analysis:
+
+        What does df.describe() show, and why is it useful?
+
+        Explain the difference between loc and iloc.
+
+    Advanced Operations:
+
+        How would you group data by "gender" and calculate the average "weight_kg"?
+
+        What is the purpose of inplace=True in pandas methods?
+
+Example Code Snippets:
+python
+
+# Filter outliers and save changes  
+df = df[(df["weight_kg"] >= 40) & (df["weight_kg"] <= 200)]  
+
+# Calculate BMI and round to 2 decimal places  
+df["bmi"] = (df["weight_kg"] / (df["height_m"] ** 2)).round(2)  
+
+# Group by gender and aggregate  
+gender_stats = df.groupby("gender").agg({"height_cm": "mean", "weight_kg": "median"})  
+
+Key Terms:
+
+    NaN: "Not a Number" (missing value).
+
+    Boolean Indexing: Filter rows using True/False conditions.
+
+    GroupBy: Split data into groups for aggregation.
+
+Next Steps:
+
+    Practice importing messy datasets and cleaning them.
+
+    Experiment with grouping/aggregation for summary statistics.
+
+    Explore regex for text data cleaning (e.g., df["email"].str.contains("@")).
