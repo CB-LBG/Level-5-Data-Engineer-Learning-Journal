@@ -1,0 +1,60 @@
+Objectives
+    1. Formative Assessments:
+        ◦ Understand their role in practising structured writing, gathering feedback, and improving before summative tasks.
+        ◦ Clarify submission guidelines, deadlines, and flexibility (e.g., grace periods, word count limits).
+    2. Version Control & Git:
+        ◦ Learn Git fundamentals: cloning, committing, branching, merging, and resolving conflicts.
+        ◦ Compare centralized vs. distributed systems and tools like GitHub/GitLab.
+        ◦ Explore Git’s role in DevOps, CI/CD pipelines, and collaboration.
+    3. Python Programming Basics:
+        ◦ Master variables, data types (integers, floats, strings, booleans, lists, tuples, dictionaries), and type conversion.
+        ◦ Use loops (for, while), conditionals (if-elif-else), and string operations.
+        ◦ Practice list comprehensions and error handling.
+    4. Software Development Practices:
+        ◦ Contrast Agile, Waterfall, and Extreme Programming (XP) methodologies.
+        ◦ Apply XP principles (continuous testing, simplicity, small releases) to iterative development.
+
+Key Concepts
+    1. Formative Assessments:
+        ◦ Optional but beneficial for feedback and skill-building.
+        ◦ Flexible deadlines with grace periods, but late submissions risk delayed feedback.
+        ◦ Word count limits (e.g., 500 ±10%) to encourage conciseness.
+    2. Git & Version Control:
+        ◦ Distributed Workflow: Each user has a full repository copy for offline work.
+        ◦ Key Commands:
+            ▪ git clone: Copy a repository.
+            ▪ git commit: Save snapshots with messages.
+            ▪ git branch/checkout: Manage parallel workstreams.
+            ▪ git pull/push: Sync with remote repositories.
+        ◦ Merge Conflicts: Occur when overlapping changes require manual resolution.
+    3. Python Fundamentals:
+        ◦ Data Types:
+            ▪ Strings: Immutable text; use upper(), lower(), strip(), slicing.
+            ▪ Lists: Mutable ordered collections; modify with append(), insert(), pop().
+            ▪ Tuples: Immutable ordered collections for fixed data.
+            ▪ Dictionaries: Key-value pairs for unstructured data.
+        ◦ Loops & Conditionals:
+            ▪ for item in list: iterate through sequences.
+            ▪ while condition: repeat until condition fails.
+            ▪ if-else blocks for decision-making.
+    4. Extreme Programming (XP):
+        ◦ Core Practices: Continuous testing, simplicity, small releases, pair programming.
+        ◦ Benefits: Adaptability to changing requirements, rapid feedback, reduced risk.
+        ◦ Challenges: Requires strong team communication and discipline.
+
+Questions
+    1. Formative Assessments:
+        ◦ Why might submitting a formative assessment benefit a learner even if it’s optional?
+        ◦ How does feedback on formative work prepare you for summative assignments?
+    2. Git & Version Control:
+        ◦ Explain the difference between git clone and git pull. When would you use each?
+        ◦ How does branching in Git prevent conflicts in team projects?
+    3. Python Programming:
+        ◦ What happens if you try to add a string and an integer without type conversion? How would you fix this?
+        ◦ Write a loop that prints only even numbers from a list of integers.
+    4. Software Development:
+        ◦ How does continuous integration (CI) improve code reliability in XP?
+        ◦ Why are commit messages like “Fixed bug” less helpful than “Fix data validation error in user signup”?
+    5. Problem-Solving:
+        ◦ How would you resolve a merge conflict in Git?
+        ◦ Design a Python function to calculate the factorial of a number using recursion.
