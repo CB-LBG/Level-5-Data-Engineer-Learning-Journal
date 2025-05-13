@@ -1,0 +1,204 @@
+First Line of Code
+print("Hello Conor")
+
+
+print(): Displays output to the console.
+Text must be within quotes ("" or '').
+Variables
+Store information that can change.
+Assignment operator: =
+wallet = 41
+print(wallet)  # Output: 41
+
+wallet = 32
+print(wallet)  # Output: 32
+
+day = 13
+print(day)     # Output: 13
+
+
+Numbers: Integers (Ints) and Floats
+Ints: Whole numbers, no decimals.
+Floats: Numbers with decimal points.
+day = 13
+temp = -15
+weight = 190.435623
+
+print(3 + 6)       # Output: 9
+print(day + 3)     # Output: 16
+print(day - 2)     # Output: 11
+print(weight * 2)  # Output: 380.871246
+print(weight / 2)  # Output: 95.2178115
+
+age = 32
+time = 16.58
+
+
+Strings
+Represent text.
+Enclosed in single (') or double (") quotes.
+Escape character: \
+shirt = 'blue'
+print(shirt)
+
+store = 'Conor\'s Pizza Shop, the "best" Pizza in town'
+print(store)
+
+movie = 'The Lord of the Rings: Return of the King'
+
+
+f-strings
+Embed variables in strings.
+Syntax: f"text {variable} text"
+day = 21
+day_name = 'Tuesday'
+month = 'October'
+temp = 65
+
+print(f"Today is {day_name} {month} {day} and it's {temp} degrees outside")
+
+
+Booleans and If Statements
+Boolean: True or False (1 or 0).
+If: Executes code if a condition is True.
+Indentation defines code blocks.
+light_is_on = True
+
+if light_is_on:
+    print("The light is on!")
+    print('Hello')
+
+day = 21
+weight = 190.4
+month = 'October'
+
+
+Comparison and Else
+Comparison operators: ==, !=, <, >, <=, >=
+Else: Executes code if the if condition is False.
+light_is_on = False
+
+if light_is_on:
+    print("The Light is on!")
+else:
+    print("We're in the dark")
+
+weight = 190.4
+
+if weight <= 195:
+    print("You're under weight :)")
+
+
+Modulo Operator (%)
+Returns the remainder of a division.
+def is_odd_even():
+    number = 7
+    remainder = number % 2
+    if remainder == 1:
+        return True
+    else:
+        return False
+
+print(is_odd_even())
+
+
+Project 1 – Fortune Cookie (Random)
+import random: Imports the random module.
+random.randint(a, b): Returns a random integer between a and b (inclusive).
+random.random(): Returns a random float between 0 and 1.
+import random
+
+print(random.randint(1, 10))
+print(random.random())
+
+answer = random.randint(1, 3)
+
+if answer == 1:
+    print("Yes")
+elif answer == 2:
+    print("NO")
+elif answer == 3:
+    print("Maybe")
+
+
+Lists ([])
+Ordered collections of items.
+Zero-based indexing.
+fav_movies = ["Blade Runner", "The Other Guys", "The Lord of the Rings: Trilogy"]
+print(fav_movies[0])  # Output: Blade Runner
+
+
+List Operations
+len(list): Returns the length of the list.
+list.append(item): Adds an item to the end.
+list.insert(index, item): Inserts an item at a specific index.
+del list[index]: Deletes the item at an index.
+fav_movies = ["Blade Runner", "The Other Guys", "The Lord of the Rings: Trilogy"]
+
+print(len(fav_movies))  # Output: 3
+
+fav_movies.append("Avengers")
+print(len(fav_movies))
+print(fav_movies)
+
+fav_movies.insert(1, "Detective Pikachu")
+print(fav_movies)
+
+del fav_movies[2]
+print(fav_movies)
+
+del fav_movies[0]
+del fav_movies[0]
+del fav_movies[0]
+print(fav_movies)
+
+
+For Loops
+Execute code repeatedly for items in a sequence.
+range(n): Generates numbers from 0 to n-1.
+for number in range(10):
+    print("Hello")
+
+for number in range(40):
+    print((number + 1) * 2)
+
+fav_movies = ["Blade Runner", "The Other Guys", "The Lord of the Rings: Trilogy"]
+for movie in fav_movies:
+    print(movie)
+
+
+Dictionaries ({})
+Unordered collections of key-value pairs.
+Keys are unique.
+dogs = {"Roxy": 3, "Jane": 6, "Tom": 14}
+
+print(dogs["Roxy"])  # Output: 3
+
+dogs["Sara"] = 1
+print(dogs["Sara"])
+
+del dogs["Tom"]
+print(dogs)
+print(len(dogs))
+
+old_enough_to_drink = {18: True, 19: True, 13: False}
+print(old_enough_to_drink[18])
+
+
+Functions
+Reusable code blocks.
+Defined with def.
+Can take arguments and return values.
+def sum_of_evens(numbers):
+    total = 0
+    for number in numbers:
+        remainder = number % 2
+        if remainder == 0:
+            total += number
+    return total
+
+numbers = [62, 66, 94, 97, 25, 11, 68, 54, 48, 67]
+even_sum = sum_of_evens(numbers)
+print(even_sum)
+
+
