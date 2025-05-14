@@ -1,0 +1,91 @@
+Learning Notes: Computational Performance & Parallel Programming
+Objectives
+
+    Understand the importance of computational efficiency and how to evaluate algorithm performance using Big O notation.
+
+    Compare and contrast insertion sort (O(n²)) and merge sort (O(n log n)) to analyze time complexity in best, average, and worst cases.
+
+    Differentiate between parallelism and concurrency, and their applications in computing.
+
+    Explore multi-threading vs. multi-processing and their use cases (CPU-bound vs. I/O-bound tasks).
+
+    Apply parallel programming techniques in Python for tasks like data processing and simulations.
+
+    Introduce distributed computing concepts (data vs. task parallelism) and their role in solving large-scale problems.
+
+Key Concepts
+
+    Algorithm Efficiency
+
+        Big O Notation: Classifies algorithms by how runtime/memory grows with input size (e.g., O(1), O(n), O(n²), O(n log n)).
+
+        Insertion Sort: Simple but inefficient (O(n²) worst-case). Best for small datasets.
+
+        Merge Sort: Divide-and-conquer approach (O(n log n)). Efficient for large datasets.
+
+    Parallel vs. Concurrent Programming
+
+        Parallelism: Executing tasks simultaneously across multiple processors/cores (e.g., multi-processing).
+
+        Concurrency: Managing overlapping tasks on a single core (e.g., multi-threading).
+
+        Multi-threading: Shares memory space; ideal for I/O-bound tasks (e.g., web requests).
+
+        Multi-processing: Uses separate memory; suited for CPU-bound tasks (e.g., mathematical computations).
+
+    Distributed Computing
+
+        Data Parallelism: Splitting data into chunks processed simultaneously (e.g., summing a large array).
+
+        Task Parallelism: Dividing a job into independent tasks (e.g., image processing).
+
+        Challenges: Load balancing, overhead from task coordination, and data replication.
+
+    Practical Python Tools
+
+        multiprocessing: Leverages multiple CPU cores for parallel execution.
+
+        asyncio: Handles concurrency for I/O-bound operations (e.g., fetching data).
+
+Questions for Review
+
+    Algorithm Analysis
+
+        Why does merge sort outperform insertion sort on large datasets?
+
+        When would you prefer insertion sort over merge sort, despite its higher time complexity?
+
+    Parallel Programming
+
+        What is the key difference between concurrency and parallelism? Provide a real-world example of each.
+
+        Why might multi-threading not improve performance for CPU-bound tasks in Python?
+
+    Distributed Systems
+
+        How does data locality impact performance in distributed computing?
+
+        When would you use task parallelism instead of data parallelism?
+
+    Case Studies
+
+        A retail company needs to process 10 million customer transactions. Would you recommend multi-threading or multi-processing? Why?
+
+        How would you optimize a climate modeling simulation that requires real-time updates?
+
+Example Scenario Discussion
+Task: Convert 200,000 images to grayscale.
+
+    Approach: Use data parallelism—split images into chunks and process them across multiple nodes.
+
+    Tools: Python’s multiprocessing.Pool to distribute workloads.
+
+    Challenge: Ensure even load distribution to avoid idle nodes.
+
+Key Takeaways
+
+    Efficiency Matters: Choosing the right algorithm (e.g., merge sort) can drastically reduce runtime.
+
+    Hardware Utilization: Parallelism leverages modern multi-core systems but requires careful task division.
+
+    Trade-offs: Concurrency improves responsiveness but complicates debugging; parallelism scales compute power but adds overhead.
