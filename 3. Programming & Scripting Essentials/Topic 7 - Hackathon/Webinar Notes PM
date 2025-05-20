@@ -1,0 +1,78 @@
+### **Learning Notes: Apache Spark & PySpark Fundamentals**
+
+---
+
+#### **Objectives**  
+1. **Introduce Apache Spark**:  
+   - Understand Spark’s role in distributed computing for large-scale data processing.  
+   - Compare Spark’s efficiency (in-memory processing, lazy evaluation) to tools like Pandas.  
+
+2. **Core Components**:  
+   - Learn about **Resilient Distributed Datasets (RDDs)** and their role in fault-tolerant data processing.  
+   - Explore **Spark SQL** for structured data manipulation using Python-SQL hybrid syntax.  
+
+3. **Practical Applications**:  
+   - Perform data operations: reading CSVs, filtering, grouping, aggregating, and ordering.  
+   - Identify risks of `collect()` and best practices for handling large datasets.  
+
+4. **Scalability & Optimization**:  
+   - Discuss Spark’s scalability for distributed clusters and fault tolerance via RDD replication.  
+
+---
+
+#### **Key Concepts**  
+
+1. **RDDs (Resilient Distributed Datasets)**:  
+   - **Distributed Data**: Split into partitions across worker nodes (e.g., `employee.csv` split into chunks).  
+   - **Transformations vs. Actions**:  
+     - *Transformations*: Lazy operations (e.g., `map`, `filter`, `groupBy`) that build execution plans.  
+     - *Actions*: Trigger computations (e.g., `collect()`, `count()`, `show()`).  
+   - **Example**:  
+     ```python  
+     csv_lines = sc.textFile("employee.csv")  
+     split_data = csv_lines.map(lambda line: line.split(","))  
+     ```  
+
+2. **Lazy Evaluation**:  
+   - Spark delays execution until an action is called, optimizing workflows (e.g., chaining `map` + `filter` before `collect`).  
+
+3. **Spark SQL**:  
+   - Blend Python and SQL syntax for structured data:  
+     ```python  
+     df = spark.read.csv("data.csv", header=True, schema=custom_schema)  
+     df.groupBy("country").agg(F.round(F.avg("latitude"), 2).alias("avg_lat")).show()  
+     ```  
+   - Use `spark.sql()` for direct SQL queries on DataFrames.  
+
+4. **Best Practices**:  
+   - Avoid `collect()` on large datasets (risks memory overload).  
+   - Use `first()` or `show()` for debugging instead.  
+
+5. **Cluster Architecture**:  
+   - **Driver Node**: Coordinates tasks (sends instructions to workers).  
+   - **Worker Nodes**: Process partitions in parallel (fault-tolerant via RDD replication).  
+
+---
+
+#### **Questions for Review**  
+
+1. **RDDs & Execution**:  
+   - Why are transformations like `map` considered *lazy*? How does this optimize performance?  
+   - What happens if a worker node fails during an RDD operation?  
+
+2. **Spark SQL vs. Pandas**:  
+   - When would you use Spark SQL instead of Pandas for a 10GB dataset?  
+   - Write a Spark SQL query to count unique `postcode` values in a DataFrame.  
+
+3. **Debugging & Optimization**:  
+   - Why is `collect()` risky? Provide an alternative to inspect data without loading all rows.  
+   - How does `flatMap` differ from `map`? Use the "to be or not to be" example to explain.  
+
+4. **Real-World Applications**:  
+   - How does Spark handle real-time data streaming (e.g., transactions in Alibaba’s e-commerce platform)?  
+   - Explain how a `groupBy` + `agg` operation distributes work across a cluster.  
+
+---
+
+**Next Steps**: Explore window functions, streaming with Apache Kafka, and cloud integration (AWS/GCP).  
+**Key Tools**: `pyspark.sql.functions`, `spark-submit`, and Databricks notebooks.
