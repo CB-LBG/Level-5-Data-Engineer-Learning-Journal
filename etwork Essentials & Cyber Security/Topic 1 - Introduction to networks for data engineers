@@ -1,0 +1,96 @@
+### Learning Notes: Network Essentials & Cyber Security  
+
+#### **Objectives**  
+1. **Understand Core Networking Concepts**:  
+   - Explain TCP/IP (Transmission Control Protocol/Internet Protocol) and OSI (Open Systems Interconnection) models.  
+   - Differentiate between IPv4 (32-bit, e.g., `192.168.0.1`) and IPv6 (128-bit hexadecimal, e.g., `2001:0db8:85a3:0000:0000:8a2e:0370:7334`).  
+   - Describe network devices: hubs (broadcast traffic), switches (direct traffic via MAC addresses), routers (route between networks), firewalls (filter traffic).  
+
+2. **Compare Network Models & Topologies**:  
+   - **Peer-to-Peer (P2P)**: Decentralized (e.g., file-sharing, blockchain). Low cost but less secure.  
+   - **Client-Server**: Centralized (e.g., email/web servers). Scalable but higher cost.  
+   - **Topologies**: Physical (cable layout) vs. logical (data flow path); star (central switch) vs. bus (common backbone).  
+
+3. **Analyze Network Media Types**:  
+   - **Copper**: Cost-effective, prone to interference.  
+   - **Fiber Optic**: High-speed, immune to interference, expensive.  
+   - **Wireless**: Flexible but slower, susceptible to obstacles.  
+
+4. **Explore Data Center Architecture**:  
+   - **Tiered Design**: Core (high-speed backbone), distribution (routing/security), access (end-user devices).  
+   - **Redundancy & High Availability**: Failover systems (active/standby servers), heartbeats (health checks).  
+   - **Leaf-Spine**: Modern data center model for low latency/scalability.  
+
+5. **Virtual Networking & VLANs**:  
+   - Virtual networks emulate physical infrastructure.  
+   - VLANs (Virtual Local Area Networks): Segment traffic logically for security/performance.  
+   - Trunking: Carries multiple VLANs over a single physical link.  
+
+6. **Cost & Sustainability**:  
+   - **CapEx**: Upfront costs (hardware, installation).  
+   - **OpEx**: Ongoing costs (power, maintenance, upgrades).  
+   - **Sustainability**: Energy-efficient hardware, virtualization, compression (e.g., Netflix’s video optimization).  
+
+---
+
+#### **Key Concepts**  
+1. **TCP/IP & OSI Models**:  
+   - **TCP**: Ensures reliable, ordered data delivery (e.g., splitting Netflix streams into packets).  
+   - **IP**: Handles addressing/routing (e.g., IPv6’s geographical efficiency).  
+   - **OSI Model**: Standardizes network communication across 7 layers (physical to application).  
+
+2. **IP Addressing & Conversion**:  
+   - **IPv4 Exhaustion**: 4 billion addresses → led to IPv6 (340 undecillion addresses).  
+   - **Binary/Hex Conversion**: Critical for reading IPs (e.g., `200` decimal = `C8` hex).  
+
+3. **Data Center Operations**:  
+   - **Racks & Servers**: Physical hardware organized in aisles/cabinets.  
+   - **ToR (Top of Rack) Switches**: Connect servers within a rack.  
+   - **Virtualization**: Run multiple VMs on one physical server to save costs/space.  
+
+4. **High Availability (HA)**:  
+   - Active/standby servers with real-time replication.  
+   - Failover control redirects traffic during outages (e.g., payroll database redundancy).  
+
+5. **Virtual Networks**:  
+   - **Gateways**: Bridge virtual and external networks.  
+   - **Benefits**: Isolate traffic (e.g., finance VLAN vs. guest Wi-Fi), reduce physical hardware.  
+
+6. **Cost Management**:  
+   - **TCO (Total Cost of Ownership)**: Hardware + software + downtime risks.  
+   - **Cloud vs. On-Premise**: Cloud reduces CapEx but adds OpEx (subscriptions).  
+
+7. **Sustainability Practices**:  
+   - Google: 100% renewable energy for data centers.  
+   - Content Delivery Networks (CDNs): Store data locally (e.g., Netflix) to reduce transmission energy.  
+
+---
+
+#### **Questions for Review**  
+1. **TCP/IP & Addressing**:  
+   - How does TCP ensure reliable data delivery compared to IP?  
+   - Why did IPv6 adoption lag despite its larger address space?  
+
+2. **Network Devices & Topologies**:  
+   - When would you use a hub instead of a switch? What are the risks?  
+   - How does a star topology improve security over a bus topology?  
+
+3. **Data Centers & HA**:  
+   - Explain how "heartbeat" signals prevent downtime in high-availability systems.  
+   - What is the role of a ToR switch in a leaf-spine architecture?  
+
+4. **Virtualization**:  
+   - How do VLANs enhance network performance and security?  
+   - Why might trunking be essential in a multi-VLAN environment?  
+
+5. **Costs & Sustainability**:  
+   - Calculate TCO for an on-premise data center vs. cloud: Which has higher long-term OpEx?  
+   - How does video compression (e.g., Netflix) contribute to sustainability?  
+
+---
+
+**Key Takeaways**:  
+- Networks rely on protocols (TCP/IP), addressing (IPv4/IPv6), and devices (routers/switches) to move data.  
+- Virtualization (VLANs, VMs) optimizes cost/performance but requires careful security design.  
+- Sustainability isn’t optional: Energy efficiency, hardware recycling, and CDNs reduce environmental impact.  
+- Always plan for redundancy—downtime costs can exceed hardware investments.
