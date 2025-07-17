@@ -1,0 +1,82 @@
+#### **Learning Notes**  
+
+---
+
+#### **Objectives**  
+1. Understand the **CIA Triad** (Confidentiality, Integrity, Availability) and its role in cybersecurity.  
+2. Differentiate between **symmetric** and **asymmetric encryption**, including use cases and trade-offs.  
+3. Explain how **digital signatures**, **certificate authorities (CAs)**, and **hashing** enforce data integrity and authentication.  
+4. Identify common cyber threats (e.g., phishing, DDoS, data tampering) and map them to CIA principles.  
+5. Explore practical security controls (e.g., firewalls, MFA, backups) and frameworks like **NIST**.  
+
+---
+
+#### **Key Concepts**  
+1. **CIA Triad**:  
+   - **Confidentiality**: Protect data from unauthorized access (e.g., encryption, access controls).  
+   - **Integrity**: Ensure data accuracy and prevent tampering (e.g., hashing, digital signatures).  
+   - **Availability**: Guarantee reliable access to systems/data (e.g., redundancy, backups).  
+   - *Trade-offs*: Over-emphasizing one component (e.g., encryption) may impact usability or performance.  
+
+2. **Encryption Methods**:  
+   - **Symmetric Encryption**:  
+     - Single shared key for encryption/decryption (e.g., AES-256).  
+     - *Pros*: Fast, efficient for large data volumes.  
+     - *Cons*: Key distribution risks; vulnerable if compromised.  
+   - **Asymmetric Encryption**:  
+     - Public/private key pairs (e.g., RSA).  
+     - *Use cases*: Secure emails, website certificates (TLS/SSL).  
+     - *Pros*: Enhanced security; enables digital signatures.  
+     - *Cons*: Slower than symmetric encryption.  
+
+3. **Data Integrity & Authentication**:  
+   - **Hashing**: One-way function generating unique fixed-size outputs (e.g., SHA-256).  
+     - Detects tampering (minor changes → vastly different hash).  
+     - *Collision risk*: Weak algorithms (e.g., MD5) allow duplicate hashes.  
+   - **Digital Signatures**:  
+     - Combine hashing + asymmetric encryption to verify sender identity and message integrity.  
+     - Enabled by **Certificate Authorities (CAs)** (e.g., Globalsign) that issue trusted digital certificates.  
+
+4. **Security Controls**:  
+   - **Preventive**: Firewalls, MFA, role-based access control (RBAC).  
+   - **Detective**: Audits, intrusion detection systems (IDS).  
+   - **Corrective**: Backups, patch management, disaster recovery plans.  
+   - **NIST Framework**: Standardized approach for risk assessment and security control implementation.  
+
+5. **Threat Mitigation**:  
+   - **Phishing**: Breaches confidentiality (training + email filters).  
+   - **DDoS Attacks**: Targets availability (redundancy + cloud firewalls).  
+   - **Data Overwriting**: Compromises integrity (version control + access audits).  
+
+---
+
+#### **Questions for Review**  
+1. **CIA Triad**:  
+   - How does encrypting patient records in a hospital system uphold *confidentiality*? What trade-offs might arise?  
+   - Why might a DDoS attack violate *availability* but not directly impact *integrity*?  
+
+2. **Encryption & Keys**:  
+   - When would you choose symmetric vs. asymmetric encryption for a cloud-based payment system? Justify your answer.  
+   - How do certificate authorities (CAs) prevent "man-in-the-middle" attacks during website transactions?  
+
+3. **Integrity Mechanisms**:  
+   - Explain how a changed hash value reveals data tampering. Why is SHA-3 more secure than MD5?  
+   - In the GP practice scenario, how could digital signatures prevent fraudulent prescription alterations?  
+
+4. **Practical Applications**:  
+   - What security controls would you implement to protect against accidental data overwriting in a shared database?  
+   - How does homomorphic encryption (mentioned in the medical example) balance confidentiality with data usability?  
+
+5. **Threat Response**:  
+   - If a phishing attack exposes patient emails, what steps should the GP clinic take to restore confidentiality?  
+   - Why is geographic redundancy critical for maintaining availability during a natural disaster?  
+
+---
+
+**Additional Notes**:  
+- **AWS Academy**: Highlighted as a sandbox environment for practicing cloud security skills (e.g., configuring security groups, KMS encryption).  
+- **Session Tools**: Online encryption/hashing demos (e.g., AES, SHA-256) reinforced theoretical concepts.  
+- **Group Activities**: Focused on mapping threats (phishing/DDoS/data overwriting) to CIA principles and mitigation strategies.  
+- **Next Steps**: Review NIST framework details and cyber-risk cost analysis (covered in subsequent sessions).  
+
+> 🔑 **Key Takeaway**: The CIA triad provides a foundational lens for evaluating security risks. Effective cybersecurity balances technical controls (encryption, hashing) with human factors (training, access policies).
