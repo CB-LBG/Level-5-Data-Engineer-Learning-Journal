@@ -1,0 +1,81 @@
+### **L5 DE - Network Essentials & Cyber Security - Jan 25 Session 3**  
+#### **Learning Notes**  
+
+---
+
+### **Objectives**  
+1. Understand **NIST Cybersecurity Framework** and its five core functions (Identify, Protect, Detect, Respond, Recover).  
+2. Conduct **binary risk assessments** and calculate financial impacts of security threats (SLE, ARO, ALE, ROI).  
+3. Apply **secure-by-design principles** (e.g., least privilege, defense in depth, fail-safe defaults) to architecture.  
+4. Differentiate **security patterns** (e.g., layered defenses) from **anti-patterns** (e.g., security through obscurity).  
+5. Prepare for **formative assessments** by analyzing real-world security challenges.  
+
+---
+
+### **Key Concepts**  
+1. **NIST Cybersecurity Framework**:  
+   - **Identify**: Asset management, risk assessment (e.g., vulnerability analysis).  
+   - **Protect**: Access controls, training, encryption (e.g., MFA, firewalls).  
+   - **Detect**: Anomaly monitoring, threat hunting (e.g., dark web scanning).  
+   - **Respond**: Incident containment, communication (e.g., IR plans).  
+   - **Recover**: Backups, system restoration, post-incident reviews.  
+   - *Continuous cycle*: Regularly reassess threats and update defenses.  
+
+2. **Risk Assessment & Financial Costing**:  
+   - **Binary Risk Assessment**: Simple yes/no questions to evaluate security posture (e.g., "Is sensitive data encrypted?").  
+   - **Financial Metrics**:  
+     - **SLE** (Single Loss Expectancy): Cost per incident (e.g., £60,000 for ransomware).  
+     - **ARO** (Annual Rate of Occurrence): Likelihood of an incident yearly (e.g., 0.3 = 30% chance).  
+     - **ALE** (Annual Loss Expectancy): SLE × ARO (e.g., £18,000).  
+     - **ROI for Controls**: `(ALE_before − ALE_after − Cost_of_Control) / Cost_of_Control` (e.g., ROI of 2.4 = 240% return).  
+
+3. **Secure-by-Design Principles**:  
+   - **Least Privilege**: Grant minimal access necessary (e.g., read-only permissions for non-admins).  
+   - **Defense in Depth**: Multiple security layers (e.g., firewalls + MFA + logging).  
+   - **Fail-Safe Defaults**: Deny access when systems fail (e.g., block requests if authentication crashes).  
+   - **Economy of Mechanism**: Simplicity reduces vulnerabilities (e.g., modular tools > monolithic systems).  
+   - **Open Design**: Avoid "security through obscurity"; transparency enables audits (e.g., open-source code).  
+
+4. **Security Patterns vs. Anti-Patterns**:  
+   - **Patterns**: Reusable solutions (e.g., **zero-trust architecture**—verify all entities).  
+   - **Anti-Patterns**: Flawed approaches (e.g., **single admin accounts**—creates a single point of failure; **security through obscurity**—relying on secrecy over robust design).  
+
+5. **Formative Assessment Overview**:  
+   - **Task**: Reflect on a cybersecurity challenge (e.g., data breach, inefficient tool adoption).  
+   - **Requirements**:  
+     - 1000-word report + visual evidence (e.g., diagrams, logs).  
+     - Cover problem identification, solution design, implementation, and lessons learned.  
+   - **Key Areas**: Risk management, root-cause analysis, sustainability, best practices.  
+
+---
+
+### **Questions for Review**  
+1. **NIST Framework**:  
+   - How does the "Detect" phase enable faster response to a ransomware attack?  
+   - Why is "Recover" critical for maintaining customer trust post-breach?  
+
+2. **Risk & Cost Analysis**:  
+   - A phishing attack has an SLE of £80,000 and an ARO of 0.4. Calculate the ALE. If a £10,000 security training reduces ARO to 0.1, what is the ROI?  
+
+3. **Secure Design**:  
+   - How does "least privilege" prevent insider threats in a healthcare database?  
+   - Why is "defense in depth" more effective than a single firewall for a public API?  
+
+4. **Patterns vs. Anti-Patterns**:  
+   - Contrast the security implications of **open-source voting software** (transparency) vs. **proprietary legacy systems** (obscurity).  
+   - Why is a "single admin account" an anti-pattern? What pattern fixes this?  
+
+5. **Formative Assessment**:  
+   - If you encountered an unencrypted customer data bucket, how would you:  
+     - **Identify** risks?  
+     - **Implement** a fix?  
+     - **Measure** success?  
+
+---
+
+### **Additional Notes**  
+- **AWS Academy**: Sandbox environment for practicing cloud security (e.g., configuring security groups, KMS encryption).  
+- **Session Tools**:  
+  - [Cryptii](https://cryptii.com/) for encryption/hashing demos (AES, SHA-256).  
+  - Binary risk assessment templates for quick evaluations.  
+- **Key Takeaway**: Security must be "baked in" from the start—not bolted on. Use frameworks (NIST), principles (least privilege), and patterns (layered defenses) to build resilient systems.
