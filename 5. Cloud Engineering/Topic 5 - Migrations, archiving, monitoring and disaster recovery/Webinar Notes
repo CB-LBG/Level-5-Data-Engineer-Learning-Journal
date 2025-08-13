@@ -1,0 +1,74 @@
+### Learning Notes: Cloud Migration, Archiving, and DynamoDB Lab
+
+---
+
+#### **Objectives**
+1. **Understand cloud migration strategies**: Learn the three main approaches (re-hosting, refactoring, rebuilding) and their trade-offs.
+2. **Explore cloud archiving**: Define policies for data retention, access control, and cost-efficient storage.
+3. **Gain hands-on experience with DynamoDB**: Create NoSQL tables, insert/manage data, and handle conditional writes.
+4. **Analyze real-world case studies**: Examine successes (Capital One) and challenges (Target) in cloud adoption.
+5. **Develop a data archiving strategy**: Apply concepts to industry-specific scenarios (e.g., HR, healthcare, finance).
+
+---
+
+#### **Key Concepts**
+1. **Cloud Migration Strategies**:
+   - **Re-hosting (Lift & Shift)**:  
+     - Move applications to the cloud with minimal changes.  
+     - Pros: Fast, low effort. Cons: Limited cloud optimization.  
+   - **Refactoring**:  
+     - Partially modify applications to use cloud-native features (e.g., breaking monoliths into microservices).  
+   - **Rebuilding**:  
+     - Redesign applications from scratch for full cloud benefits.  
+     - Pros: High efficiency. Cons: Time-consuming and costly.  
+   - **Key Factors**: Budget, timeline, legacy system compatibility, organizational readiness.
+
+2. **Cloud Archiving**:
+   - **Purpose**: Long-term data preservation for legal, operational, or historical needs.  
+   - **Policy Components**:  
+     - **Data Classification**: Categorize data by sensitivity (e.g., employee records, CCTV footage).  
+     - **Retention Schedules**: Define storage duration (e.g., GDPR-compliant deletion after 7 years).  
+     - **Access Controls**: Restrict access via RBAC (Role-Based Access Control).  
+     - **Storage Tiers**: Use cost-effective cold storage (e.g., Amazon Glacier) for rarely accessed data.  
+   - **Best Practices**: Encryption, deduplication, compression, and regular audits.  
+
+3. **DynamoDB (NoSQL Database)**:
+   - **Schema Flexibility**: Add attributes on-the-fly (e.g., `product_name`, `price`).  
+   - **Primary Keys**: Uniquely identify items (e.g., `product_name` as partition key).  
+   - **Conditional Writes**: Use `ConditionExpression` (e.g., `attribute_not_exists`) to prevent duplicates.  
+   - **Batch Operations**: Insert multiple items efficiently via JSON files.  
+
+4. **Case Studies**:
+   - **Capital One**: Successful cloud-first strategy focusing on security, scalability, and customer experience.  
+   - **Target**: Struggled with cost overruns and technical complexity due to inadequate planning.  
+
+---
+
+#### **Questions for Review**
+1. **Migration Strategies**:  
+   - What factors would make an organization choose refactoring over re-hosting?  
+   - How might "resistance to change" impact a cloud migration, and how can it be addressed?  
+
+2. **Archiving Policies**:  
+   - Why is data classification critical before implementing retention schedules?  
+   - How does tiered storage (hot vs. cold) optimize costs in cloud archiving?  
+
+3. **DynamoDB Operations**:  
+   - What happens if you insert an item with a duplicate primary key in DynamoDB? How do conditional writes resolve this?  
+   - Why is schema flexibility an advantage in NoSQL databases compared to SQL?  
+
+4. **Real-World Applications**:  
+   - In healthcare, how long should patient records be archived? Justify your answer with legal and operational considerations.  
+   - What security measures would you prioritize when archiving financial transaction data?  
+
+5. **Lab-Specific**:  
+   - How did the `ConditionExpression` prevent duplicate entries in the DynamoDB lab?  
+   - What error might occur if you forget to remove chevrons (`<< >>`) in Python scripts during the DynamoDB setup?  
+
+---
+
+**Key Takeaways**:  
+- Cloud migration requires balancing speed, cost, and technical optimization.  
+- Archiving is policy-driven, emphasizing security, compliance, and cost efficiency.  
+- DynamoDB excels in handling unstructured/semi-structured data with flexible schemas.  
+- Real-world failures (e.g., Target) underscore the importance of risk assessment and skilled personnel.
