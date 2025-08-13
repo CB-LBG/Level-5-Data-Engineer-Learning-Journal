@@ -1,0 +1,59 @@
+Based on the transcript, here are structured learning notes covering the session's objectives, key concepts, and reflective questions:
+
+---
+
+### **Learning Notes: Building ETL Pipelines with AWS Step Functions**
+
+#### **Objectives**
+1. **Build an End-to-End Pipeline**: Create an automated N2N (presumably "need-to-know" or end-to-end) data pipeline using AWS services.
+2. **Leverage Step Functions**: Use AWS Step Functions to orchestrate workflows with minimal coding (low-code drag-and-drop environment).
+3. **Integrate AWS Tools**: Combine S3 (storage), Athena (querying), Glue (metadata catalog), and IAM (permissions) for a cohesive pipeline.
+4. **Optimize Data Storage**: Convert raw CSV data into Parquet format for compression, faster queries, and cost efficiency.
+5. **Implement Iterative Development**: Apply the "inner loop" methodology (code → build → test → iterate) for incremental pipeline improvements.
+
+#### **Key Concepts**
+1. **Iterative Development (Inner Loop)**:
+   - **Code**: Develop logic (e.g., SQL queries for Athena).
+   - **Build**: Package components (e.g., using Step Functions states).
+   - **Test**: Validate outputs (e.g., check table creation in Glue).
+   - *Why?* Enables rapid iterations, autonomy, and faster deployment.
+
+2. **Monitoring & Observability**:
+   - **Detect & Diagnose**: Identify issues (e.g., performance thresholds) before users are affected.
+   - **Build-Measure-Learn**: Use feedback (e.g., user behavior, system metrics) to refine pipelines.
+   - **Tools**: Grafana + Prometheus for dashboards; CloudWatch for AWS-native monitoring.
+
+3. **Step Functions Workflow**:
+   - **States**: Modular actions (e.g., "Start Query Execution" in Athena).
+   - **Choice State**: Branch logic (e.g., "If tables exist, skip creation").
+   - **Role Permissions**: IAM roles (e.g., `step-lab-role`) grant services access to S3/Glue/Athena.
+
+4. **Data Optimization**:
+   - **Parquet Format**: Columnar storage + Snappy compression reduces storage/query costs.
+   - **Partitioning**: Organize data by attributes (e.g., `pickup_year`) for faster queries.
+   - **External vs. Internal Tables**:  
+     - *External*: Metadata layer over S3 data (no data movement).  
+     - *Internal*: Data stored within the service (e.g., after Parquet conversion).
+
+5. **ETL Pipeline Steps**:
+   - **Extract**: Fetch NYC taxi data from public S3 bucket → store in lab S3.
+   - **Transform**: Create tables/views via Athena; convert CSV to Parquet.
+   - **Load**: Populate Glue catalog; output optimized data to S3.
+
+#### **Questions for Reflection**
+1. **Iterative Development**: Why is the "inner loop" (code-build-test) particularly advantageous in cloud environments compared to waterfall approaches?  
+2. **Error Handling**: How might you modify the Step Functions workflow to automatically retry failed Athena queries?  
+3. **Data Optimization**: What are the trade-offs between using Parquet + Snappy compression versus uncompressed CSV files?  
+4. **Permissions**: Why does the Step Functions workflow need a dedicated IAM role (`step-lab-role`)? What risks arise if this role is overly permissive?  
+5. **Monitoring**: If a pipeline stage slows down unexpectedly (e.g., Athena query), which metrics would you check first in Grafana/Prometheus?  
+
+---
+
+### **Key Takeaways from Session**
+- **Pipeline Example**:  
+  `S3 (Raw CSV) → Athena (Create DB/Table) → Glue (Metadata) → Parquet Conversion → Optimized S3 Output`  
+- **Debugging Tip**: Case sensitivity in JSON paths (e.g., `$.QueryExecution.QueryExecutionId` vs. `$.queryexecution.queryexecutionid`) can cause workflow failures.  
+- **Lab Focus**: Emphasized building pipelines incrementally (start simple → add error handling → optimize).  
+- **Tools Highlighted**: AWS Step Functions (orchestration), Athena (SQL queries), Glue (catalog), S3 (storage).  
+
+> 💡 **Next Steps**: Practice partitioning Parquet data by date columns and integrate error-handling states (e.g., `Catch` in Step Functions) for robust pipelines.
