@@ -1,0 +1,70 @@
+### Learning Notes: Containerization and Orchestration
+
+---
+
+#### **Objectives**
+1. **Understand Containerization**: Learn how containers solve environment consistency issues in software deployment by packaging applications with dependencies.
+2. **Compare Containers vs. VMs**: Analyze the differences in resource efficiency, portability, and scalability between containers and virtual machines.
+3. **Explore Docker**: Use Docker to build, run, and manage containerized applications.
+4. **Introduce Orchestration**: Understand orchestration tools (e.g., Kubernetes, ECS) for automating container management, scaling, and deployment.
+5. **Hands-on Lab**: Migrate a web application and database to Docker containers, link them, and deploy using AWS services.
+
+---
+
+#### **Key Concepts**
+1. **Containerization**:
+   - Solves "works on my machine" problems by bundling apps with dependencies (libraries, runtime, config) into isolated, lightweight processes.
+   - **Docker**: Tool for creating containers via `Dockerfile` → image → container.
+   - **Benefits**: Portability, consistency, rapid deployment, and efficient resource use.
+
+2. **Containers vs. Virtual Machines (VMs)**:
+   - **VMs**: Require a full OS per instance, hypervisor layer, and dedicated resources (higher overhead).
+   - **Containers**: Share the host OS kernel, are process-isolated, and start in seconds (lightweight).
+
+3. **Orchestration**:
+   - Automates deployment, scaling, and management of containerized apps.
+   - **Tools**:
+     - **Kubernetes (EKS)**: Industry standard for complex workloads.
+     - **Docker Swarm**: Simple integration for Docker users.
+     - **Apache Mesos**: Ideal for hybrid (container + non-container) workloads.
+   - **AWS Services**:
+     - **ECS**: Manages containers on EC2 clusters.
+     - **Fargate**: Serverless option (no EC2 management).
+     - **ECR**: Registry for Docker images.
+
+4. **Lab Workflow**:
+   - **Task 1**: Set up the lab environment (IDE, dependencies).
+   - **Task 2**: Explore the existing app/database architecture (EC2 instances).
+   - **Task 3**: Containerize the web app (create `Dockerfile`, build image, run container).
+   - **Task 4**: Migrate the database to a container and link it to the app.
+   - **Task 5**: Push images to AWS ECR for centralized management.
+
+---
+
+#### **Questions for Review**
+1. **Containerization**:
+   - Why might an application fail when moved from a developer's laptop to a production server? How do containers resolve this?
+   - How does Docker reduce resource overhead compared to virtual machines?
+
+2. **Orchestration**:
+   - What is the difference between automation and orchestration? Provide an example.
+   - When would you choose AWS Fargate over managing EC2 instances in ECS?
+
+3. **Docker Practical**:
+   - What is the purpose of a `Dockerfile`? What key instructions are used to define a container?
+   - How do you pass environment variables (e.g., database IP) to a Docker container at runtime?
+
+4. **AWS Integration**:
+   - Why use ECR? What steps are needed to push a Docker image to ECR?
+   - What security measures (e.g., security groups) are required to expose a containerized app to the internet?
+
+5. **Lab Troubleshooting**:
+   - If a containerized app cannot connect to its database, what steps would you take to diagnose the issue?
+   - How does changing the `DB_HOST` environment variable relink the app container to a new database container?
+
+---
+
+**Next Steps**:  
+- Revisit the lab (Tasks 3–5) to reinforce container linking and ECR usage.  
+- Explore Kubernetes (EKS) for advanced orchestration scenarios.  
+- Review AWS documentation on [ECS](https://aws.amazon.com/ecs/) and [Fargate](https://aws.amazon.com/fargate/).
