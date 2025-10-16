@@ -1,0 +1,58 @@
+#### **Objectives**
+*   Understand the importance of **monitoring data ingestion pipelines** for performance, reliability, and data integrity.
+*   Learn how to implement **real-time anomaly detection** using statistical methods (Z-score) and machine learning (Isolation Forest).
+*   Build and evaluate **time series forecasting models** (ARIMA, SARIMAX) to predict trends and identify anomalies.
+*   Understand the role of monitoring tools like **Prometheus and Grafana** in a data ecosystem, specifically for Kafka pipelines.
+*   Apply these techniques to practical scenarios like fraud detection in finance and critical data monitoring in healthcare.
+
+---
+
+#### **Key Concepts**
+
+**1. Monitoring & Alerting**
+*   **Purpose:** Ensure data pipelines are healthy, performant, and reliable. Key metrics include throughput, latency, consumer lag, and error rates.
+*   **Tools:**
+    *   **Prometheus:** An open-source toolkit for collecting and storing metrics as time series data.
+    *   **Grafana:** An open-source platform for visualizing metrics from Prometheus (and other sources) through dashboards.
+    *   **Kafka Exporter:** A bridge that exposes Kafka metrics in a format Prometheus can scrape.
+*   **Alerting:** Rules can be defined in Prometheus to trigger alerts (e.g., via email) when metrics cross thresholds (e.g., high consumer lag for 5 minutes), enabling proactive issue resolution.
+
+**2. Time Series Forecasting**
+*   **Purpose:** Predict future values based on historical data. Useful for capacity planning, resource allocation, and anomaly detection.
+*   **Decomposition:** A time series can be broken down into:
+    *   **Trend:** The long-term progression (e.g., overall upward growth).
+    *   **Seasonality:** Regular, repeating patterns (e.g., weekly, monthly, or yearly cycles).
+    *   **Residual/Error:** The random noise left after removing trend and seasonality.
+*   **Models:**
+    *   **ARIMA (AutoRegressive Integrated Moving Average):** Good for data with trends but no strong seasonal patterns.
+    *   **SARIMAX (Seasonal ARIMA with eXogenous variables):** Extends ARIMA to handle seasonality and external factors.
+    *   **Prophet:** A robust forecasting tool developed by Facebook, designed for data with strong seasonal effects.
+
+**3. Anomaly Detection**
+*   **Purpose:** Identify data points, events, or observations that deviate significantly from the dataset's normal behavior.
+*   **Techniques:**
+    *   **Z-Score:** A simple statistical method. Calculates how many standard deviations a data point is from the mean. Data points with a Z-score beyond a threshold (e.g., ±2 or ±3) are flagged as anomalies.
+    *   **Isolation Forest:** An unsupervised machine learning algorithm. It "isolates" anomalies by randomly selecting features and split values, assuming anomalies are easier to separate from the rest of the data.
+    *   **Forecasting-Based:** Using models like SARIMAX to predict a value and its confidence interval. Data points falling outside this interval are considered potential anomalies.
+
+**4. Practical Implementation (Python)**
+*   **Forecasting Workflow:**
+    1.  Load and prepare time series data (e.g., Air Passengers dataset).
+    2.  Decompose the series to understand trend and seasonality.
+    3.  Split data into training and test sets.
+    4.  Fit models (ARIMA, SARIMAX) and generate forecasts.
+    5.  Evaluate model performance using metrics like **Mean Squared Error (MSE)**.
+*   **Anomaly Detection Workflow:**
+    1.  Generate or load a dataset, intentionally injecting anomalies.
+    2.  Apply detection methods (Z-score, Isolation Forest).
+    3.  Visualize results to see which points were correctly flagged.
+
+---
+
+#### **Questions**
+*   In a financial institution monitoring credit card transactions, why would **encryption** not be considered an "anomaly detection technique," even though it's crucial for security?
+*   What is the fundamental difference between how the **Z-score** and **Isolation Forest** algorithms define and identify an "anomaly"?
+*   When decomposing a time series, what visual pattern in the data would lead you to choose a **multiplicative** model over an **additive** one?
+*   Why did the basic **ARIMA** model perform poorly on the Air Passengers dataset, and how did **SARIMAX** address this limitation?
+*   In the Isolation Forest example, how does adjusting the **`contamination`** parameter change the algorithm's behavior, and what are the trade-offs of setting it to `'auto'` versus a specific value like `0.02`?
+*   How could a **forecasting model's confidence interval** be used as a dynamic threshold for anomaly detection in a real-time data stream?
