@@ -1,0 +1,73 @@
+### **Learning Notes: APIs, Microservices & Building a Flask App**
+
+#### **Objectives**
+By the end of this session, you should be able to:
+*   Understand the core concepts of microservices architecture and its benefits in data engineering.
+*   Explain the function and purpose of APIs (Application Programming Interfaces) and API gateways.
+*   Use the Python `requests` library to interact with a REST API, including handling authentication, parameters, and status codes.
+*   Parse and work with JSON data returned from an API.
+*   Implement basic error handling (`try-except` blocks) for robust API interactions.
+*   Build a simple REST API using the Flask framework to perform CRUD (Create, Read, Update, Delete) operations.
+
+---
+
+#### **Key Concepts**
+
+**1. Microservices Architecture**
+*   **Definition:** An architectural style that structures an application as a collection of loosely coupled, independently deployable services.
+*   **Key Benefits:**
+    *   **Independent Scaling & Deployment:** Individual services can be scaled up or down based on demand without affecting others.
+    *   **Modularity & Flexibility:** Services can be developed, updated, and maintained independently.
+    *   **Fault Isolation:** The failure of one service does not necessarily bring down the entire system.
+    *   **Technology Agnostic:** Different services can be built using different programming languages or technologies.
+
+**2. APIs (Application Programming Interfaces)**
+*   **Definition:** A set of rules and protocols that allows different software applications to communicate with each other. In web development, this often happens over HTTP.
+*   **REST APIs:** A common architectural style for designing networked applications. They use standard HTTP methods:
+    *   `GET`: Retrieve data.
+    *   `POST`: Create new data.
+    *   `PUT`: Update existing data.
+    *   `DELETE`: Remove data.
+*   **API Keys:** Used for authentication, tracking usage, enforcing rate limits, and access control.
+*   **API Gateway:** Acts as a single entry point for API requests. It handles request routing, authentication, and protocol translation, simplifying and securing communication with backend microservices.
+
+**3. Interacting with APIs in Python (`requests` library)**
+*   **Making a Request:** Use `requests.get(url, headers=headers, params=parameters)` to fetch data.
+*   **Headers:** Often used to pass metadata, like API keys (e.g., `{'x-api-version': '2'}`) or specify the expected response format (e.g., `{'Accept': 'application/json'}`).
+*   **Parameters (`params`):** Key-value pairs used to filter or query data from the API endpoint.
+*   **Status Codes:** HTTP responses indicate the result of the request.
+    *   `2xx` (Success): e.g., `200 OK`, `201 Created`.
+    *   `4xx` (Client Error): e.g., `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found`.
+    *   `5xx` (Server Error): e.g., `500 Internal Server Error`.
+*   **Handling the Response:** Use `response.json()` to parse the response content into a Python dictionary or list.
+
+**4. Error Handling in Python (`try-except-else-finally`)**
+*   **`try` block:** Code that might raise an exception is placed here.
+*   **`except` block:** Catches and handles specific exceptions (e.g., `HTTPError`, `ConnectionError`, `Timeout`, `ValueError`).
+*   **`else` block:** Executes only if the `try` block does *not* raise an exception.
+*   **`finally` block:** Executes *always*, regardless of whether an exception occurred. Useful for cleanup code (e.g., closing files).
+
+**5. Building an API with Flask**
+*   **Flask:** A lightweight and popular micro web framework for building web applications and APIs in Python.
+*   **Routing:** Using decorators like `@app.route('/endpoint', methods=['GET', 'POST'])` to define API endpoints and the HTTP methods they accept.
+*   **JSONification:** The `jsonify()` function converts Python dictionaries/lists into JSON responses.
+*   **Request Object:** `request.get_json()` is used to access and parse JSON data sent in a `POST` or `PUT` request.
+*   **CRUD Operations:** A Flask app can be structured to Create, Read, Update, and Delete resources (e.g., employees in a list acting as a simple database).
+
+---
+
+#### **Questions**
+
+**Conceptual Questions:**
+1.  What is the primary advantage of being able to independently scale a microservice, and how does this differ from a monolithic architecture?
+2.  Explain the role of an API gateway in a microservices architecture. Why is it considered a "single point of entry"?
+3.  What is the difference between an HTTP `401 Unauthorized` and a `403 Forbidden` status code?
+4.  Why is it important to use a virtual environment when developing a Python project like a Flask application?
+
+**Python & Practical Application Questions:**
+5.  You make a `GET` request to an API, but it fails with a `404` status code. What are the first three things you should check in your code?
+6.  You receive a `JSON` response from an API, but when you try to access a specific key, you get a `KeyError`. How would you safely handle this to prevent your program from crashing?
+7.  In the Flask app built in the session, what specific code ensures that only a `name` field can be sent in a `POST` request to create a new employee, and not a field like `job`?
+8.  What is the purpose of the `global next_employee_id` line inside the `create_employee()` function in the Flask app? What would happen if this line were removed?
+9.  When building a Flask route to delete an employee, why is it necessary to check if the employee exists before attempting to delete them, and what HTTP status code should be returned if they don't exist?
+10. How does the `try-except` block in the `create_employee()` function improve the robustness of the API when handling incoming data?
