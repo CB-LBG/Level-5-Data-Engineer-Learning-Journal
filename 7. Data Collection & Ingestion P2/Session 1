@@ -1,0 +1,70 @@
+#### **Objectives**
+By the end of this session, you should be able to:
+*   Explain the core concepts of Event-Driven Architecture (EDA), including its components and benefits over batch processing.
+*   Describe the Publish-Subscribe (Pub-Sub) model and how it relates to EDA.
+*   Understand the fundamental role and structure of Apache Kafka (including topics, partitions, brokers, and clusters).
+*   Build a Python-based data producer to generate and simulate a stream of event data.
+*   Apply best practices for collaboration and presentation in a data engineering context.
+
+---
+
+#### **Key Concepts**
+
+**1. Event-Driven Architecture (EDA)**
+*   **Purpose:** Designed to handle fast-moving, streaming, or real-time data where traditional batch processing systems struggle. Enables immediate insights and actions (e.g., real-time inventory updates, fraud detection).
+*   **Core Components:**
+    *   **Producer:** The system or application that generates an **event** (a signal that something has happened, e.g., a purchase, a sensor reading, a user login).
+    *   **Broker:** A middleman service (e.g., Apache Kafka) that receives, stores, and organizes events. It acts like a "messaging post office."
+    *   **Consumer:** A system that subscribes to and processes events from the broker, taking action based on the data (e.g., updating a database, triggering a notification).
+*   **Key Benefit:** **Decoupling.** Producers and consumers operate independently and asynchronously. A producer "fires and forgets," sending events to the broker without waiting for a consumer, making the system highly scalable and resilient.
+
+**2. Publish-Subscribe (Pub-Sub) Model**
+*   A specific, common implementation of EDA.
+*   **Publishers** (Producers) send messages to logical channels called **Topics**.
+*   **Subscribers** (Consumers) listen to Topics they are interested in and receive all messages published to them.
+*   This allows a single message from one producer to be efficiently distributed to multiple consumers.
+
+**3. Apache Kafka**
+*   A leading open-source distributed event streaming platform.
+*   **Kafka Cluster:** A collection of **Brokers** (servers) working together for scalability and fault tolerance.
+*   **Topics:** Categories or feed names to which records are published. Topics are split into **Partitions**.
+    *   **Partitions:** Allow a topic to be parallelized and split across multiple brokers. Each partition is an ordered, immutable sequence of records.
+    *   **Offsets:** A unique, sequential ID assigned to each record within a partition, allowing consumers to track their position.
+*   **Fault Tolerance:** Achieved through **replication**. Partitions are copied across multiple brokers. One broker acts as the **leader** for a partition, and others are **followers**. If a leader fails, a follower takes over.
+
+**4. Building a Data Producer in Python**
+*   **Purpose:** To simulate real-world event data for testing and developing data pipelines without using live systems.
+*   **Key Tools & Practices:**
+    *   **Virtual Environment (`venv`):** An isolated Python environment to manage project-specific dependencies without conflicting with other projects.
+    *   **`Faker` Library:** A Python package used to generate realistic fake data (e.g., user IDs, page names, devices).
+    *   **`argparse` Module:** Allows you to pass command-line arguments to your script, making it flexible (e.g., to set the number of events, output rate, and destination file).
+    *   **JSON Lines (`.jsonl`) Format:** A convenient format for storing structured data where each line is a valid JSON object. Ideal for streaming event data.
+
+**5. Collaboration & Presentation in Data Engineering**
+*   **Collaboration:**
+    *   **Clear Communication:** Use tools like Slack, Teams, or Git issues.
+    *   **Documentation:** Essential for maintaining and understanding data products.
+    *   **Defined Roles & Responsibilities:** Prevents confusion and ensures accountability.
+    *   **Agile Practices:** Regular stand-ups and progress updates to identify blockers.
+*   **Effective Presentation:**
+    *   **Know Your Audience:** Tailor the technical depth and message (e.g., executives care about business impact, technical teams care about implementation).
+    *   **Use Real-World Examples:** Contextualize your work to make it relatable.
+    *   **Visual Aids:** Use clear diagrams and charts.
+    *   **Story Structure:** Structure your narrative with a beginning (the problem), middle (the solution), and end (the results and next steps).
+
+---
+
+#### **Questions**
+
+*   **To Test Your Understanding:**
+    1.  What is the primary advantage of an event-driven architecture over a batch processing system for a use case like real-time fraud detection?
+    2.  In the Pub-Sub model, what is the role of a "Topic"?
+    3.  Why are events in a Kafka partition considered "immutable"?
+    4.  What is the purpose of using a Python virtual environment when building a data producer?
+    5.  How does the `argparse` module improve the functionality of our producer script?
+
+*   **For Deeper Exploration:**
+    1.  How does Kafka's partitioning mechanism contribute to its scalability and performance?
+    2.  Beyond the examples given (retail, fraud), what other industries or applications could benefit from an event-driven architecture, and why?
+    3.  What are the potential challenges or "risks" of implementing a complex EDA, and how might they be mitigated?
+    4.  How would you modify the Python producer to simulate different types of events (e.g., both "click" and "purchase" events) within the same script?
