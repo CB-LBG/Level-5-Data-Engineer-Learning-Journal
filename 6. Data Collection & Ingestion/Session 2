@@ -1,0 +1,65 @@
+### **Learning Notes: Heterogeneous Data Ingestion & Python Implementation**
+
+#### **Objectives**
+By the end of this session, you should be able to:
+*   Understand and differentiate between ETL, ELT, and Reverse ETL processes.
+*   Explain the importance of metadata management and data catalogs in data engineering.
+*   Set up and use a Python virtual environment for project dependency management.
+*   Implement data ingestion in Python from multiple heterogeneous sources (CSV, log files, APIs).
+*   Clean, validate, and merge disparate datasets into a unified format for analysis.
+*   Use regular expressions (regex) to parse and extract structured data from unstructured log files.
+
+---
+
+#### **Key Concepts**
+
+**1. Data Ingestion Patterns**
+*   **ETL (Extract, Transform, Load):** The traditional process. Data is extracted from a source, transformed (cleaned, reshaped) in a staging area, and then loaded into a target system like a data warehouse. Best for when the target schema is well-defined.
+*   **ELT (Extract, Load, Transform):** Data is extracted and loaded directly into a target system (like a data lake or modern warehouse), and transformations happen there. Leverages the power of modern storage and offers more flexibility.
+*   **Reverse ETL:** Data is extracted from a central warehouse, transformed, and loaded into operational systems (e.g., a CRM, marketing platform) to make insights actionable.
+
+**2. Metadata & Data Catalogs**
+*   **Metadata:** "Data about the data." It describes the structure, format, lineage, and meaning of data assets (e.g., column names, data types, source systems).
+*   **Data Catalog:** A centralized metadata repository that acts as a map of all data assets. Tools like AWS Glue can automatically crawl data sources to populate a catalog.
+*   **Benefits:** Improved data discovery, data quality, governance, compliance, and collaboration. Helps answer questions like "Where is our customer data?" or "What does this column mean?"
+
+**3. Python Virtual Environments**
+*   **Purpose:** To create an isolated environment for a Python project, managing its specific dependencies separately from other projects and the system-wide Python installation.
+*   **Why Use Them:** Prevents package version conflicts between projects and ensures reproducibility.
+*   **Basic Commands:**
+    *   Create: `python -m venv my_environment_name`
+    *   Activate (Linux/Mac): `source my_environment_name/bin/activate`
+    *   Deactivate: `deactivate`
+
+**4. Practical Python Ingestion & Wrangling**
+*   **CSV Ingestion:** Using `pandas.read_csv()`. Key considerations include specifying data types (`dtype`) and encodings.
+*   **Log File Ingestion:**
+    *   Logs are semi-structured and challenging to parse.
+    *   **Regular Expressions (Regex)** are used to define patterns and extract structured fields (e.g., IP address, timestamp, status code) from each line of the log.
+    *   Process involves reading the file line-by-line, applying the regex pattern, and sorting results into "good" (parsed successfully) and "bad" (failed to parse) data.
+*   **API Ingestion:**
+    *   Using the `requests` library to make a `GET` call to an API endpoint.
+    *   Always implement error handling (e.g., `try-except` blocks) to manage failed requests (e.g., timeouts, non-200 status codes).
+    *   API responses (often in JSON) can be flattened and loaded into a Pandas DataFrame.
+*   **Data Validation & Merging:**
+    *   **Validation:** Use `assert` statements or conditional checks (e.g., `df.isna().sum() == 0`) to ensure data quality rules are met.
+    *   **Transformation:** Operations like converting string dates to `datetime` objects, dropping duplicates, and grouping/aggregating data (e.g., `groupby` and `agg`).
+    *   **Merging:** Use `pd.merge()` to join multiple DataFrames (e.g., user data, order data, log summary) on common keys (e.g., `user_id`).
+
+---
+
+#### **Questions**
+
+**Conceptual Questions:**
+1.  What is the fundamental difference in the *order of operations* between ETL and ELT, and what is the primary advantage of using an ELT approach in a modern data stack?
+2.  When would a Reverse ETL process be used? Provide a concrete business example.
+3.  How does a data catalog help a data engineer comply with data governance regulations like GDPR?
+4.  Why is it considered a best practice to use a virtual environment for each Python project you develop?
+
+**Python & Practical Application Questions:**
+5.  You need to read a CSV file where the `price` column has a dollar sign (e.g., "$25.99"). What steps would you take in Pandas to convert this column into a numeric data type?
+6.  A log file line is formatted as: `"203.0.113.195 - - [01/Jan/2023:12:00:00 +0000] 'GET /api/user HTTP/1.1' 200 1234"`. Write a regex pattern to extract the **IP address** and the **HTTP status code**.
+7.  You write a Python script to call an API, but it keeps failing with a `404` status code. What are the first three things you would check?
+8.  After merging two DataFrames, you find duplicate rows. What Pandas function(s) could you use to investigate and then remove these duplicates?
+9.  In the session, the code uses a `with open(...)` block to read the log file. Why is this method preferred over simply using `open()` and `close()`?
+10. What is the purpose of the `reset_index(drop=True)` command often used after operations like `groupby` or `drop_duplicates`? What would the DataFrame look like if you omitted this step?
