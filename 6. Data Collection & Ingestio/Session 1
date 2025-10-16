@@ -1,0 +1,68 @@
+### **Learning Notes: Data Collection & Ingestion (Python Refresher)**
+
+#### **Objectives**
+By the end of this session, you should be able to:
+*   Refresh core Python skills, specifically using the Pandas library for data manipulation.
+*   Understand the difference between data collection and data ingestion.
+*   Perform the initial steps of the data ingestion process, including collecting data from a web source.
+*   Clean and pre-process a raw dataset by handling missing values, incorrect data types, and poor structure.
+*   Transform data from a "wide" format to a "long" format for easier analysis.
+*   Conduct basic Exploratory Data Analysis (EDA) to understand dataset contents and identify trends.
+
+---
+
+#### **Key Concepts**
+
+**1. Data Collection vs. Data Ingestion**
+*   **Data Collection:** The initial, often one-time, process of gathering raw data from various sources (e.g., surveys, sensors, APIs). It's about "gathering and putting data somewhere," like a data lake.
+*   **Data Ingestion:** The automated, ongoing process of moving collected data into a system where it can be used. It involves transforming, cleaning, and loading data into the right format and place (e.g., a data warehouse).
+
+**2. Common Data Sources & Methods**
+*   **Collection Methods:** Surveys, Sensors, Web Scraping, APIs (e.g., pulling data from a government website).
+*   **Ingestion Patterns/Tools:** ETL (Extract, Transform, Load), ELT, APIs, Streaming (e.g., Kafka).
+
+**3. Common Data Issues ("Dirty Data")**
+*   Missing Values (`NaN`, `None`)
+*   Duplicates
+*   Mismatched Data Types (e.g., numbers stored as text)
+*   Outliers and Inaccurate Data
+*   Inconsistent Formatting (e.g., column headers with spaces, mixed date formats)
+*   Structural Problems (e.g., data in a "wide" format that is hard to analyze)
+
+**4. Python & Pandas Workflow (Practical Application)**
+*   **Importing Libraries:** Using `pandas`, `numpy`, `seaborn`, and `requests` to extend Python's capabilities.
+*   **Data Collection with `requests`:** Using the `requests` library with custom headers to mimic a web browser and download data from a URL when a simple `pd.read_csv()` fails.
+*   **Initial Inspection:**
+    *   `df.head()` / `df.tail()`: View the top/bottom rows.
+    *   `df.shape`: Check the number of rows and columns.
+    *   `df.dtypes`: Check the data types of each column.
+*   **Data Cleaning & Transformation:**
+    *   `df.T`: Transpose (flip) the data frame.
+    *   `df.melt()`: Unpivot a DataFrame from a "wide" to a "long" format.
+    *   `df.rename()`: Rename columns for clarity.
+    *   `pd.to_numeric()`: Convert a column to a numeric data type (handling errors).
+    *   `df.dropna()`: Remove rows with missing values. Use the `subset` parameter to target specific columns.
+*   **Handling Data Types:**
+    *   **Object:** Typically used for strings or unclassified data.
+    *   **Integer & Float:** For whole numbers and decimals, respectively.
+    *   **Datetime:** For date and time values.
+*   **Exploratory Data Analysis (EDA):**
+    *   `df.describe()`: Generate descriptive statistics for numerical columns.
+    *   `df.groupby().mean()`: Aggregate data (e.g., find the mean price per borough per year).
+    *   `df.sort_values()`: Sort the DataFrame by a specific column.
+
+---
+
+#### **Questions**
+
+**Conceptual Questions:**
+1.  What is the key difference between a one-time data *collection* project and an ongoing data *ingestion* pipeline?
+2.  Why is the ETL (Extract, Transform, Load) process often preferred over simply loading raw data directly into a warehouse and cleaning it later?
+3.  Imagine you are asked to build a system that tracks live social media posts for a brand. Would this be primarily a data collection or data ingestion challenge? Why?
+
+**Python & Practical Application Questions:**
+4.  After reading a dataset, what are the first three commands you should run to understand its basic structure and content?
+5.  Why is it often necessary to "melt" or pivot a dataset from a wide to a long format? What analytical problems does the long format solve?
+6.  You have a column of prices stored as a text string (object data type). What are two different Pandas methods you could use to convert it to a numerical format?
+7.  The `.dropna()` function is powerful but dangerous. What is the risk of using it without any parameters, and how can you use the `subset` parameter to make it safer?
+8.  In the session, a function was created using `def` and `lambda`. What is the primary purpose of a `lambda` function in Pandas, and how does it differ from a standard `def` function?
