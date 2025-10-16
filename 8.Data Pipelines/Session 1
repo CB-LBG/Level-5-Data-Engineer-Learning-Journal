@@ -1,0 +1,63 @@
+#### **Objectives**
+*   Understand the limitations of traditional **ETL (Extract, Transform, Load)** processes and explore modern alternatives like ELT, streaming, and data federation.
+*   Learn to build a foundational **data pipeline MVP (Minimum Viable Product)** using Python and pandas.
+*   Develop practical skills in **data cleaning and validation**, including handling missing values, standardizing formats, and fixing data quality issues.
+*   Implement **data transformation functions** for sensitive data handling (hashing), date correction, and string cleaning.
+*   Prepare cleaned data for loading into a **SQL database** as the final pipeline destination.
+
+#### **Key Concepts**
+
+**1. ETL vs. Modern Data Integration**
+*   **Traditional ETL:**
+    *   Batch-oriented processing on a schedule (hourly/daily)
+    *   Transform data *before* loading into a data warehouse
+    *   Limitations: Not real-time, rigid architecture, struggles with unstructured data, scaling challenges
+*   **Modern Alternatives:**
+    *   **ELT (Extract, Load, Transform):** Load raw data first, transform later in the destination
+    *   **Streaming Pipelines:** Real-time data processing (like conveyor belt vs. postal truck)
+    *   **Data Federation/Virtualization:** Querying data from multiple sources without moving it
+    *   **Data Blending:** Combining different data sources for specific analyses
+
+**2. Pipeline Architecture Patterns**
+*   **Point-to-Point:** Direct connections between systems (simple but doesn't scale)
+*   **Hub-and-Spoke:** Centralized management with everything connecting to a central server
+*   **Distributed/Bus Architecture:** Central stream where data flows (highly scalable but complex)
+
+**3. Data Quality & Governance**
+*   **Key Dimensions:** Accuracy, Completeness, Consistency, Validity, Uniqueness, Timeliness
+*   **Importance:** Poor data leads to flawed insights and business risks
+*   **Tools:** Great Expectations, Monte Carlo for automated validation and monitoring
+*   **Governance:** Data lineage, schema validation, access control, logging
+
+**4. Practical Pipeline Development**
+*   **Modular Approach:** Breaking pipeline into small, reusable functions
+*   **Common Data Issues Handled:**
+    *   **Column Cleaning:** Standardizing names (lowercase, underscores), removing whitespace
+    *   **Missing Values:** Handling blanks, dashes, "N/A", "null" consistently
+    *   **Data Type Conversion:** Fixing dates, numbers, and categorical data
+    *   **Sensitive Data:** Hashing passwords using SHA-256
+    *   **Data Validation:** Checking date logic (e.g., birth dates not in future)
+*   **Transformation Functions:**
+    *   `clean_columns()`: Standardize column names
+    *   `hash_password()`: Securely hash sensitive data
+    *   `clean_dob()`: Fix date of birth inconsistencies
+    *   `clean_salary()`: Remove formatting and extract numeric values
+
+**5. Tool Ecosystem**
+*   **Kafka:** Streaming platform for real-time data
+*   **Airflow:** Workflow orchestration and scheduling
+*   **NiFi:** Data ingestion and distribution
+*   **dbt:** Transformation and data quality in the data warehouse
+
+---
+
+#### **Questions**
+*   In the Spotify case study, why would a traditional ETL approach be insufficient for providing real-time song recommendations to users?
+*   What are the key differences between **hashing** and **encryption**, and why is hashing more appropriate for storing passwords in a database?
+*   When cleaning the date of birth column, what logic would you implement to handle cases where someone's birth year appears to be in the future (e.g., 2065 instead of 1965)?
+*   How does the **modular function approach** demonstrated in the practical session make the pipeline more maintainable and testable compared to writing all transformations in a single script?
+*   What are the advantages of using **regular expressions** (regex) for cleaning data like salary fields, and what potential pitfalls should you watch for?
+*   Why is it important to establish a consistent **missing values policy** (e.g., converting blanks, dashes, and "N/A" to standard NaN values) early in the pipeline development?
+*   In the context of data governance, how would you implement **data lineage tracking** to understand where your user data originated and what transformations were applied?
+
+---
