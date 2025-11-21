@@ -44,17 +44,3 @@ This journal documents hands-on mastery in the following core areas:
 
 ***
 
-## 🎯 Learning Modules & Progress Log
-
-This section details the specific topics covered and links directly to the corresponding files in the repository.
-
-| Module/Focus Area | Key Deliverables | Status | Link to Work |
-| :--- | :--- | :--- | :--- |
-| **Module 1: Foundations & Governance** | Data Governance Report, Data Lineage Document | ✅ Complete | [View Notes](./01_Core_Concepts/Governance_and_Ethics.md) |
-| **Module 2: SQL & Relational Databases** | Optimized Query Examples, Data Model ERD | ✅ Complete | [View SQL Scripts](./02_SQL_Data_Modelling/SQL_Practice.sql) |
-| **Module 3: Python Data Processing** | Pandas Data Cleaning Scripts, Unit Tests | 📈 In Progress | [View Python Scripts](./03_Python_ETL/Data_Cleaning_Scripts.py) |
-| **Module 4: Cloud Data Storage** | Cloud Storage Setup (IaC), Security Configuration | 🛠️ Planned | [View Cloud Setup](./05_Cloud_Infrastructure/) |
-| **Module 5: Data Pipeline Orchestration** | Airflow DAGs/Data Factory Pipeline Setup | 🛠️ Planned | [View Pipeline Code](./04_Data_Pipelines_Orchestration/) |
-| **End-Point Assessment Project** | Full Data Product Implementation | 🎯 Target | [View Project](./06_Capstone_Project/Project_Proposal.md) |
-
-***
