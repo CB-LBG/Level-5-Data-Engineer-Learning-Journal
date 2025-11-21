@@ -1,0 +1,18 @@
+/data-pipeline-hackathon/
+│
+├── data/
+│ ├── Edinburgh-daytime.xlsx
+│ └── Strathspey-weather.xlsx
+│
+├── pipeline/
+│ ├── ingest.py
+│ ├── clean.py
+│ ├── transform.py
+│ ├── merge.py
+│ └── resample.py
+│
+├── output/
+│ └── merged_summary.csv
+│
+├── main.py
+└── requirements.txt
