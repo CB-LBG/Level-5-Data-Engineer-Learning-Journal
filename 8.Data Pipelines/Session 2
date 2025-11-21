@@ -1,0 +1,35 @@
+### **Learning Notes: Workflow Management & Data Pipelines**
+
+#### **Objectives**
+*   To understand the role and importance of data pipelines as the "lifeblood" of business operations.
+*   To build a practical data pipeline that extracts, transforms, and loads (ETL) data from CSV files into an SQLite database.
+*   To extend an existing pipeline to accommodate new data sources with different formats and structures (e.g., French data).
+*   To identify weaknesses in a prototype pipeline and plan for improvements in resilience, automation, and generality.
+
+#### **Key Concepts**
+1.  **Data Pipelines:** A sequence of steps to move and transform data from a source to a destination, making it ready for use. Analogous to a physical pipeline or a vein carrying blood.
+2.  **Workflow Management:** The practice of designing, building, and managing these pipelines to be resilient, automated, and reliable. Failures (like the Colonial Pipeline ransomware attack) highlight the cost of poor workflow design.
+3.  **SQLite Database:** A lightweight, serverless SQL database engine stored in a single file. Ideal for development and prototyping within a Python environment.
+4.  **Pipeline Steps (ETL):**
+    *   **Extract:** Reading data from source files (e.g., `pd.read_csv`).
+    *   **Transform:**
+        *   **Data Cleaning:** Handling missing values, standardizing formats (dates, phone numbers), and mapping values (e.g., gender 'F' to 'Female').
+        *   **Data Validation:** Checking for duplicates, missing values, and data integrity (e.g., `df.isna().sum()`).
+        *   **Data Hashing:** Applying hash functions to sensitive columns like passwords.
+    *   **Load:** Writing the cleaned data into a target database (e.g., using `df.to_sql`).
+5.  **Schema Design:** Defining the structure of the database tables, including column names, data types (TEXT, INTEGER, DATETIME), and constraints (PRIMARY KEY, NOT NULL, UNIQUE).
+6.  **Handling Data Evolution:** New data sources (like the French data) introduce challenges that force the pipeline to evolve, including:
+    *   Different column headers (in another language).
+    *   Alternate date and number formats (DD/MM/YYYY vs. YYYY-MM-DD, commas vs. dots for decimals).
+    *   New categorical values (new entries in a 'gender' column).
+    *   Differing column sets (presence or absence of a 'middle name' column).
+
+#### **Questions**
+1.  Based on the Colonial Pipeline case, what are the potential consequences of a poorly designed or non-resilient data pipeline for a business?
+2.  Why is it important to define a primary key and constraints (like NOT NULL and UNIQUE) when creating a database schema?
+3.  What are the advantages and limitations of using SQLite for a data pipeline project compared to a server-based database like PostgreSQL?
+4.  The initial pipeline was designed for one specific UK data file. What specific issues were identified when trying to incorporate the French data file?
+5.  Why is it considered "technical debt" to manually rename column headers for each new data source? What would a more generalizable solution look like?
+6.  The `clean_salary` function had to be modified to handle different formats (commas vs. decimal points) and periods (monthly vs. annual). How can a single function be designed to be robust enough for multiple international data formats?
+7.  What are the risks of running a data pipeline script multiple times without considering whether data already exists in the target database (e.g., duplicate emails)?
+8.  How can Python functions and code structure be refactored to make the pipeline more maintainable and easier to extend for future data sources?
