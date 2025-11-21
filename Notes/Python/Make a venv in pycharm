@@ -1,0 +1,3 @@
+python -m venv venv
+
+Can be done be selecting python interpreter (Python only use code above for conda)
