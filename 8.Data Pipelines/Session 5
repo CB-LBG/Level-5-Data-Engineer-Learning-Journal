@@ -1,0 +1,70 @@
+#### **Objectives**
+*   To understand the updated course structure and reduced submission workload.
+*   To learn the purpose and structure of the End-Point Assessment (EPA), including both the Project Report and the Professional Discussion.
+*   To comprehend the importance of service management for data pipelines (reliability, monitoring, maintenance).
+*   To implement basic logging and validation within a data pipeline.
+*   To introduce the concept of testing (e.g., using `pytest`) for ensuring code quality and reliability.
+
+---
+
+#### **Key Concepts**
+
+**1. Course & Assessment Updates**
+*   **Reduced Submissions:** The number of remaining formative submissions has been reduced. Learners now only have **two submissions left**: a Project Brief and a final portfolio-style submission.
+*   **Project Brief:** The next step is to identify and propose a project for the final EPA report. This must be a real-world piece of work with business value, and it should be **completed before the Gateway**.
+*   **Gateway:** This is the point at which you transition from the training provider (BPP) to the independent assessment phase. It occurs after the taught sessions.
+*   **EPA Timeline:** After the Gateway, you have **10 weeks** to write and submit your project report to BCS.
+
+**2. End-Point Assessment (EPA) Deep Dive**
+*   The EPA consists of two distinct assessment methods:
+    *   **A. Project Report, Presentation, and Q&A:**
+        *   You submit a report (approx. 3500 words) on a project you have completed.
+        *   You must include a **KSB mapping** showing where you have evidenced the required knowledge, skills, and behaviors.
+        *   This is followed by a 50-minute session: a 20-minute presentation and 30 minutes of questions.
+    *   **B. Professional Discussion:**
+        *   A 90-minute interview based on five key themes (e.g., Data Quality, Regulatory Compliance, CPD).
+        *   Assessors will ask a minimum of 10 questions (at least two per theme).
+        *   You are assessed against KSBs, and the portfolio you build during the course is your evidence base for this discussion.
+*   **Pass vs. Distinction:** The key difference is moving from **describing/demonstrating** (Pass) to **justifying/evaluating** (Distinction). Always explain the "why" behind your decisions, discuss alternatives, and critique your approach.
+
+**3. Service Management for Pipelines**
+*   Pipelines are critical business operations that require ongoing management.
+*   **Key Pillars:** Reliability, Availability, Observability (Monitoring), Accountability, and Continuous Improvement.
+*   **Incident Management Process:**
+    1.  **Detection:** Discovering an issue (via alerts, dashboards, user reports).
+    2.  **Triage:** Categorizing the issue by severity and priority.
+    3.  **Resolution:** Applying a fix (e.g., rollback, hotfix).
+    4.  **Communication:** Keeping stakeholders informed.
+    5.  **Post-Incident Review:** Learning from the event to prevent future occurrences.
+
+**4. Technical Implementation: Logging, Validation & Testing**
+*   **Logging:**
+    *   Superior to `print()` statements for production systems.
+    *   Allows you to record events with different levels (INFO, WARNING, ERROR).
+    *   Logs can be output to the console or written to files for historical analysis and monitoring.
+*   **Validation (Data Checks):**
+    *   Proactive checks on data to ensure quality *before* it is processed or loaded.
+    *   Common checks include: presence of required columns, data freshness, null counts, and uniqueness of key fields (e.g., emails).
+*   **Testing (Code Checks):**
+    *   Using frameworks like `pytest` to ensure code functions as expected.
+    *   Involves writing test cases with specific inputs and expected outputs.
+    *   Essential for Continuous Integration/Continuous Deployment (CI/CD); failing tests can prevent faulty code from being deployed.
+
+**5. Code Quality & Refactoring**
+*   **PEP 8:** The official style guide for Python code. Tools like `pylint` can automatically check your code against these standards.
+*   **Refactoring:** The process of restructuring existing code to make it more efficient, readable, and maintainable without changing its external behavior (e.g., generalizing a function to handle multiple data sources using configuration files).
+
+---
+
+#### **Questions for Reflection**
+*   **Course & EPA:**
+    *   Have I identified a suitable real-world project for my EPA report? Does it have clear business value?
+    *   Looking at the KSBs for the Professional Discussion, can I map my portfolio work to each one? Where are my evidence gaps?
+    *   For my project report, how can I move from *describing* what I did to *justifying why* I chose that approach to aim for a distinction?
+*   **Service Management:**
+    *   For a pipeline I have built or work with, what would a basic monitoring dashboard need to show?
+    *   What is the incident management process in my organization? Who would I alert if a critical data pipeline failed?
+*   **Technical Implementation:**
+    *   Where in my current data processing code could I add logging to make debugging easier?
+    *   What are the top three data quality checks I should implement for my most important data source?
+    *   How could I write a simple test for a data transformation function I use regularly? What edge cases should it handle?
