@@ -1,0 +1,16 @@
+Self-directed learning - September 2025
+Please provide date of this month’s off the job training you completed that was relative to your apprenticeship and that was completed in working hours 21/09/2025
+
+Please select the main type of training undertaken
+
+Reviewing materials: Yes
+
+Completing Research: Yes
+
+Working on assignments: Yes
+
+Application of new, specific knowledge, skills and behaviours...: Yes
+
+Please include a paragraph on what specific learning activity the above relates to on your learning plan? This month focused on SQL and the introduction to Global Data Warehousing (GDW). These activities relate to S4 (Data Integration) and K4 (Data Structures), building the core skills needed to design and query enterprise-scale data warehouses.
+
+Explain what learning you undertook and how you will or have applied this in the workplace? I completed the "SQL Pre-Coursework" and began the "GDW (Global Data Warehouse)" modules. This training refreshed my advanced SQL skills, focusing on complex joins, window functions, and performance tuning. I also learned about the conceptual architecture of a Global Data Warehouse. In the workplace, I applied these SQL skills to optimize several slow-running queries used in our monthly reporting. By rewriting the queries to use more efficient joins and indexing, I significantly reduced the execution time. This has improved the availability of data for our business analysts and reduced the load on our production servers.
