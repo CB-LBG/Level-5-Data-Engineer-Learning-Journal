@@ -1,0 +1,16 @@
+Self-directed learning - April 2025
+Please provide date of this month’s off the job training you completed that was relative to your apprenticeship and that was completed in working hours 09/04/2025
+
+Please select the main type of training undertaken
+
+Reviewing materials: Yes
+
+Completing Research: Yes
+
+Working on assignments: Yes
+
+Application of new, specific knowledge, skills and behaviours...: Yes
+
+Please include a paragraph on what specific learning activity the above relates to on your learning plan? This month’s learning focused on the Databases and Data Lakes module. The activities covered the fundamental architecture of modern data platforms, distinguishing between traditional relational databases and flexible data lakes. This relates to K1 (Data Concepts) and K4 (Data Solutions), specifically understanding how different storage technologies support varying business needs.
+
+Explain what learning you undertook and how you will or have applied this in the workplace? I completed the "Databases and Data Lakes" webinar and assignment, which provided a deep dive into data storage schemas and the trade-offs between SQL and NoSQL databases. I learned about the "schema-on-write" versus "schema-on-read" methodologies and how data lakes allow for the ingestion of unstructured data. In the workplace, I have applied this knowledge by reviewing our current data storage setup. I was able to identify areas where our rigid relational schemas might be creating bottlenecks and started discussions on whether a data lake approach could better handle our raw log files before transformation. This understanding allows me to contribute more effectively to architectural discussions regarding our data platform’s scalability.
