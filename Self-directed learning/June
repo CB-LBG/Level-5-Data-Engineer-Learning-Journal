@@ -1,0 +1,16 @@
+Self-directed learning - June 2025
+Please provide date of this month’s off the job training you completed that was relative to your apprenticeship and that was completed in working hours 04/06/2025
+
+Please select the main type of training undertaken
+
+Reviewing materials: Yes
+
+Completing Research: Yes
+
+Working on assignments: Yes
+
+Application of new, specific knowledge, skills and behaviours...: Yes
+
+Please include a paragraph on what specific learning activity the above relates to on your learning plan? The focus for June was the Programming and Scripting Essentials module. This deepens the technical capability required for data engineering, specifically relating to S1 (Use of programming languages) and S2 (Software engineering) to build robust data pipelines.
+
+Explain what learning you undertook and how you will or have applied this in the workplace? I attended the Programming and Scripting Essentials webinar and completed the associated exam. This module moved beyond basic syntax into more advanced concepts like error handling, modular coding, and best practices for version control. In the workplace, I have begun refactoring some of our older legacy scripts to make them more efficient and readable. I applied the error handling techniques I learned to ensure that our data pipelines fail gracefully and alert us to issues, rather than crashing silently. This has improved the reliability of our daily data loads and reduced the time spent debugging unexpected failures.
