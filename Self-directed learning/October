@@ -1,0 +1,16 @@
+Self-directed learning - October 2025
+Please provide date of this month’s off the job training you completed that was relative to your apprenticeship and that was completed in working hours 09/10/2025
+
+Please select the main type of training undertaken
+
+Reviewing materials: Yes
+
+Completing Research: Yes
+
+Working on assignments: Yes
+
+Application of new, specific knowledge, skills and behaviours...: Yes
+
+Please include a paragraph on what specific learning activity the above relates to on your learning plan? October continued the deep dive into Data Warehousing with GDW Modules 2, 3, and 4, alongside Data Collection and Ingestion 2. This relates to K17 (Data Integration) and S4 (Automated Pipelines), focusing on the end-to-end process of moving data into a warehouse environment.
+
+Explain what learning you undertook and how you will or have applied this in the workplace? I completed multiple modules on the Global Data Warehouse, covering the detailed design of ETL (Extract, Transform, Load) processes. I also finished "Data Collection and Ingestion 2", which looked at handling batch versus real-time data streams. I applied this knowledge by mapping out the data lineage for a new project at work. Using the principles from the GDW modules, I designed a staging area strategy that allows us to validate data quality before it enters our main warehouse. This "quality gate" approach ensures that downstream reports are accurate and reduces the time spent fixing data errors after they have been ingested.
