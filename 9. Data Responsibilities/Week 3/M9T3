@@ -1,0 +1,78 @@
+
+data owners - Manages access to datasets and ensures policies are consistently enforced.
+- Approve or deny access requests, ensure compliance with access policies, and maintain data security.
+
+cdo - Oversees governance frameworks and ensures compliance with regulations like GDPR and HIPAA
+-Develops governance frameworks, monitors compliance, and aligns policies with business priorities.
+
+data stewards - Maintains data quality and integrity in assigned domains.
+-Perform regular data quality checks, implement standards, and resolve inconsistencies.
+
+it security managers - Manages the company’s data security infrastructure and ensures data is protected against breaches
+-Enforces encryption, accesscontrols, and authentication protocols; monitors and resolves security gaps.
+
+Data Protection Officer/Compliance Officer - Under GDPR a dedicated Data Protection Officer is a legal requirement for companies handling large amounts of personal data
+
+
+
+
+Policy 1. 
+Gaps - Absence of RBAC and insufficient access review frequency
+
+Improvements - Implement RBAC and conduct quarterly or event-driven access reviews
+
+
+Policy 2
+Gaps - no defined retention schedules
+
+Improvements - Introduce automated retention schedules and deletion protocols aligned with GDPR
+
+Policy 3 
+
+Gaps - Lack of real-time monitoring; no automated tools.
+
+Improvements - Implement automated input validation and real-time quality dashboards
+
+
+Problem-Solution Table
+
+Problem	            Impact	                                                                     Proposed Solution	                                                                                                    Principle Applied
+
+Data Duplication    inflated figures leading to incorrect reporting              run de-dupe script to clean records & implement unique ids into database      Data Integrity   
+ 
+Incomplete Data    delays in reconciliation			                              mandatory fields and real-time validation checks     
+ Accountability, Data Integrity, Completeness   
+
+Lack of Accountability   issues unresolved for long periods                         establish RACI matrix with clear roles and responsibilities                                     Accountability   
+
+Inaccurate Reporting   Reputational damage and loss of client trust            audit output against source data  
+Transparency, Compliance
+
+
+Challenge: Inconsistent Access Control
+Impact: Risk of breaches, non-compliance
+Recommended Strategy: Role-based access and approval workflows
+Principle: Compliance
+
+Lack of Accountability
+Issues remain unresolved
+Develop Standard Operating Procedures and create a RACI matrix
+Accountability
+			
+Challenge: Data Quality Issues
+Impact: Operational inefficiency, client mistrust
+Recommended Strategy: Real-time data validation and automated checks
+Principle: Data Quality			
+
+Lack of transparency
+Mistrust in DataLink’s analytics solutions
+Implement client-facing  reports and publish a correction log so clients can see how their data is handled
+Transparency
+
+
+
+
+
+
+
+
