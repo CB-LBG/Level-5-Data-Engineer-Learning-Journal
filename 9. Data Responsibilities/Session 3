@@ -1,0 +1,30 @@
+### **Objectives**
+By the end of this session, learners should be able to:
+1.  Identify roles and responsibilities within a data governance structure.
+2.  Analyze existing data policies and procedures to identify gaps and suggest improvements.
+3.  Synthesize a data governance framework for a hypothetical organization.
+4.  Apply data stewardship principles to resolve real-world scenarios.
+5.  Evaluate strategies for improving data stewardship practices.
+
+### **Key Concepts**
+*   **Data Governance:** The overarching framework of rules, policies, standards, and procedures that ensure data is accurate, secure, consistent, ethical, usable, and aligned with business goals. It defines *what* should happen.
+*   **Data Stewardship:** The hands-on implementation and enforcement of data governance rules. It involves the day-to-day management, care, and quality control of data to ensure governance policies are followed. It is *how* the governance framework is executed.
+*   **Core Data Governance Roles:**
+    *   **Chief Data Officer (CDO):** Oversees the entire data strategy and governance framework.
+    *   **Data Owner:** Holds accountability for a specific dataset or domain.
+    *   **Data Steward:** Responsible for the practical management, quality, and integrity of data.
+    *   **IT Security Manager:** Ensures the technical security of data.
+*   **Data Stewardship Principles:**
+    *   **Accountability:** Ensuring data accuracy and security.
+    *   **Transparency:** Clarity on how data is collected, used, stored, and shared.
+    *   **Data Quality:** Ensuring data is consistent, complete, timely, and useful.
+    *   **Compliance:** Adhering to laws (e.g., GDPR), regulations, and internal policies.
+*   **Policy Analysis:** Effective data policies (e.g., on Access Control, Retention, Quality) must be clear, within scope, understood by staff, and comprehensive to mitigate risk. Gaps can lead to confusion, non-compliance, and data quality issues.
+*   **Metadata Management:** "Data about data" (e.g., field names, descriptions, source, update frequency). It is critical for understanding and trusting data; corrupted metadata effectively means corrupted data.
+
+### **Questions**
+*   **Comprehension:** What is the fundamental difference between data governance and data stewardship?
+*   **Application:** In a scenario with duplicate data and missing timestamps, which stewardship principles are violated, and what specific actions would you take?
+*   **Analysis:** When reviewing a "Data Access Control Policy," what key elements (e.g., Role-Based Access Control, review frequency) would you look for to identify potential gaps?
+*   **Evaluation:** Why is automation critical for modern data quality management, as opposed to manual checks?
+*   **Synthesis:** What are the potential business impacts of a "lack of accountability" within a data stewardship model?
