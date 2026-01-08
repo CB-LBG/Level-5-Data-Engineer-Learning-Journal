@@ -1,0 +1,69 @@
+Focus: Pandas, Data Inspection, and Basic Manipulation.
+Setup & Imports
+
+Python
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Loading Data
+df = pd.read_csv('filename.csv')
+df = pd.read_excel('filename.xlsx')
+
+
+Initial Inspection
+df.head(5): View first 5 rows.
+df.shape: Tuple of (rows, columns).
+df.info(): Check data types and null values.
+df.describe(): Summary stats (mean, min, max) for numeric columns.
+df.columns: List of column names.
+Selection & Filtering
+Select Column: df['col_name']
+Select Multiple: df[['col1', 'col2']]
+Filter Rows:
+Python
+# Rows where Sales > 100
+filtered_df = df[df['Sales'] > 100]
+
+# Multiple conditions (AND = &, OR = |)
+# Important: Use parentheses around conditions
+complex_filter = df[(df['Sales'] > 100) & (df['Region'] == 'North')]
+
+
+Data Cleaning
+Drop Nulls: df.dropna()
+Fill Nulls: df.fillna(0) or df.fillna('Unknown')
+Rename Columns: df.rename(columns={'old': 'new'}, inplace=True)
+Change Type: df['col'] = df['col'].astype(int)
+Grouping & Aggregation
+Similar to SQL GROUP BY.
+
+Python
+
+
+# Group by Region and get sum of Sales
+df.groupby('Region')['Sales'].sum()
+
+# Multiple aggregations
+df.groupby('Region').agg({
+    'Sales': 'sum',
+    'Profit': 'mean',
+    'Order_ID': 'count'
+})
+
+
+Creating New Columns
+
+Python
+
+
+# Simple Math
+df['Total'] = df['Price'] * df['Quantity']
+
+# Applying a function (Lambda)
+# Example: First 3 letters of a string
+df['Short_Name'] = df['Name'].apply(lambda x: x[:3])
+
+
