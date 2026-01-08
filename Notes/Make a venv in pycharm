@@ -1,5 +1,11 @@
 python -m venv venv
 
+got to venv
+
+cd venv
+
+got back - deactivate
+
 Can be done be selecting python interpreter (Python only use code above for conda)
 
 1. What is a venv (Virtual Environment)?
