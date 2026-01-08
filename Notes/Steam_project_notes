@@ -1,0 +1,252 @@
+Section 1: The Setup
+These lines are about gathering the tools and settings you need before doing any work.
+The Imports
+
+Python
+
+
+import requests
+import pyodbc
+import time
+import pandas as pd
+
+
+Think of import as opening a toolbox. Python has a small "standard" set of tools, but for special jobs, you need to import extra kits:
+requests: The "Internet" tool. It allows your Python script to visit websites and download data (just like your web browser).
+pyodbc: The "Bridge." It connects your Python script to a database (like SQL Server).
+time: A stopwatch. We use this to tell the script to "pause" or "sleep."
+pandas: A heavy-duty data tool (usually used for Excel-like tables). Note: It is imported here, but actually unused in the script. You could delete this line and the code would still work.
+Configuration Variables
+
+Python
+
+
+API_KEY = "9D05..."
+STEAM_ID= "7656..."
+SERVER_NAME= "(local)"
+DATABASE_NAME= "SteamAnalytics"
+
+
+These are Constants—values we set once at the top so we don't have to type them out repeatedly later.
+API_KEY: A password for robots. Steam requires this so they know who is asking for data.
+STEAM_ID: The specific user ID (the Steam account) you want to look up.
+SERVER_NAME / DATABASE_NAME: The address of your database. (local) usually means "the computer I am currently typing on."
+Section 2: Helper Functions
+These are mini-programs or "recipes" defined now so they can be used later. Nothing happens here yet; the script is just memorizing how to do these tasks.
+1. Connecting to the Database
+
+Python
+
+
+def get_db_connection():
+    """Connects to SQL Server using Windows Authentication"""
+
+
+def: Defines a new function (a custom command).
+"""...""": A docstring. This is a note for humans explaining what the function does.
+
+Python
+
+
+    conn_str = (
+        f"Driver={{ODBC Driver 17 for SQL Server}};"
+        f"Server={SERVER_NAME};"
+        f"Database={DATABASE_NAME};"
+        "Trusted_Connection=yes;"
+    )
+    return pyodbc.connect(conn_str)
+
+
+f"..." (f-strings): This stands for "formatted string." It lets you inject variables directly into text. Python replaces {SERVER_NAME} with (local).
+conn_str: This is a "ConnectionString." It's like a specialized URL that tells the database driver exactly where to go and how to knock on the door.
+Trusted_Connection=yes: This means "Use my current Windows login credentials." (So you don't need a username/password in the script).
+return: Sends the live connection back to whoever asked for it.
+2. Getting the List of Games
+
+Python
+
+
+def get_owned_games():
+    url = f"http://api.steampowered.com/...&key={API_KEY}&steamid={STEAM_ID}..."
+
+
+Here we build the specific web address (URL) that the Steam API listens to. We plug in your Key and ID.
+
+Python
+
+
+    response = requests.get(url)
+
+
+requests.get(url): This is the moment the script actually goes to the internet. It "gets" the webpage.
+
+Python
+
+
+    if response.status_code != 200:
+        raise Exception("Failed to connect...")
+
+
+status_code: When web servers reply, they give a code. 200 means "OK / Success". 404 means "Not Found".
+!= 200: If it is not OK, the script pulls the emergency brake (raise Exception) and stops with an error message.
+
+Python
+
+
+    return response.json()['response']['games']
+
+
+.json(): The data comes back as a long string of text. This converts that text into a Python Dictionary (a structured list of data keys and values) so we can read it easily.
+['response']['games']: We act like we are opening folders. We go into the 'response' folder, then grab the 'games' list inside it.
+3. Getting Specific Game Details
+
+Python
+
+
+def get_game_details(app_id):
+    url = f"https://store.steampowered.com/api/appdetails?appids={app_id}"
+
+
+This function takes an input: app_id (the unique number for a specific game, e.g., 440 for Team Fortress 2).
+
+Python
+
+
+    try:
+        response = requests.get(url)
+        ...
+    except:
+        pass
+    return 0, "Unknown"
+
+
+try / except: This is a safety net. The internet is messy; sometimes a connection fails or the data is weird.
+try: "Attempt to do this code..."
+except: "If anything crashes inside the try block, don't stop the program. Just jump here."
+pass: Do nothing.
+Result: If the try block fails, the function returns defaults: Score 0 and Genre "Unknown".
+Inside the try block:
+
+Python
+
+
+            # Get Genres
+            genres = "Unknown"
+            if 'genres' in game_data:
+                genres = ", ".join([g['description'] for g in game_data['genres']])
+
+
+List Comprehension: [g['description'] for g in game_data['genres']] is a shortcut. It says: "Look at every item in the genre list, grab just the description, and make a new list of those words."
+.join: Takes that list (e.g., ['Action', 'FPS']) and glues them into one string: "Action, FPS".
+Section 3: Main Execution
+This is the "Brain" of the operation.
+
+Python
+
+
+def run_etl():
+    print("--- STARTING STEAM ETL ---")
+    
+    # Connect to SQL Server
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+
+conn: The open phone line to the database.
+cursor: Think of the cursor as the "worker" or the "pen." The connection is the road, but the cursor is the thing that actually executes commands and writes data.
+Step A: Create Table
+
+Python
+
+
+    cursor.execute('''
+        IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Games' and xtype='U')
+        CREATE TABLE Games (...)
+    ''')
+    conn.commit()
+
+
+cursor.execute: We are sending raw SQL code (the text inside ''') to the database.
+SQL Logic: It checks "Does a table named 'Games' exist?" If NO, it creates it with columns for ID, Name, Playtime, Score, etc.
+conn.commit(): Crucial. In databases, changes are temporary until you "Commit" (Save) them. If you forget this, the table disappears when the script ends.
+Shutterstock
+Step B: Get Games
+
+Python
+
+
+    my_games = get_owned_games()
+    
+    # Sort by playtime
+    my_games.sort(key=lambda x: x['playtime_forever'], reverse=True)
+
+
+We get the list of games.
+lambda x: x['...']: A lambda is a tiny, unnamed function. This line tells the sorter: "When you look at a game, look specifically at the 'playtime_forever' number to decide the order."
+reverse=True: Sorts big-to-small (Highest playtime first).
+
+Python
+
+
+    games_to_process = my_games[:30] 
+
+
+[:30]: This is Slicing. It says "Start at the beginning and stop at item 30." We chop the list so we only process the top 30 games.
+Step C: The Loop
+
+Python
+
+
+    for game in games_to_process:
+
+
+The Loop: "Take the first game, call it game, run the code below. Then take the second game..."
+
+Python
+
+
+        playtime = round(game['playtime_forever'] / 60, 2)
+
+
+Steam gives playtime in minutes. We divide by 60 to get hours, and round(..., 2) keeps only 2 decimal places (e.g., 5.45 hours).
+
+Python
+
+
+        score, genres = get_game_details(app_id)
+
+
+We pause here to call our helper function get_game_details to fetch the extra info for this specific game.
+The Upsert (Update/Insert)
+
+Python
+
+
+        cursor.execute("DELETE FROM Games WHERE AppID = ?", app_id)
+        cursor.execute('''
+            INSERT INTO Games ... VALUES (?, ?, ?, ?, ?)
+        ''', (app_id, name, playtime, score, genres))
+
+
+This is a strategy to avoid duplicates.
+Delete: First, we delete the game from the DB if it's already there.
+Insert: Then, we insert the fresh version.
+The ? marks: These are safety placeholders. We pass the actual variables (app_id, name...) separately. This prevents "SQL Injection" hacking.
+
+Python
+
+
+        time.sleep(1.5)
+
+
+Rate Limiting: Steam's Store API will ban you if you ask for data too fast. We force the script to sleep for 1.5 seconds between every game request.
+
+Python
+
+
+if __name__ == "__main__":
+    run_etl()
+
+
+This is standard Python boilerplate. It means: "If I press the Play button on this specific file, run the run_etl() function."
+
