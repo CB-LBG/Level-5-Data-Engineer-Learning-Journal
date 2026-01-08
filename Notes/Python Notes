@@ -1,0 +1,24 @@
+Think of a venv as a disposable, isolated toolbox specifically for this one project.
+
+Without a venv: If you install a library (like pandas) directly on your computer, it installs it globally. If Project A needs pandas version 1.0 and Project B needs pandas version 2.0, they will conflict and one project will break.
+
+With a venv: You create a mini-installation of Python just for this folder. Whatever libraries you install here stay inside this folder. They don't touch your main computer's system, and they don't mess up other projects.
+
+n f-string (formatted string literal) in Python allows you to embed variables or expressions directly inside a string using {}. Introduced in Python 3.6, it offers a concise and readable alternative to str.format() and % formatting.
+
+python -m venv venv
+
+got to venv
+
+cd venv
+
+got back - deactivate
+
+An f-string (formatted string literal) in Python allows you to embed variables or expressions directly inside a string using {}
+
+Example:
+
+name = "Alice"
+score = 95
+print(f"Hello {name}, your score is {score}.")
+# Output: Hello Alice, your score is 95
