@@ -1,0 +1,36 @@
+Focus: Teradata specific syntax, performance optimization, and unique functions.
+
+Unique Keywords
+QUALIFY: Filters Window Functions immediately (avoids subqueries).
+Usage: SELECT * FROM table QUALIFY ROW_NUMBER() OVER(PARTITION BY id ORDER BY date DESC) = 1
+SAMPLE: Returns a random set of rows.
+Usage: SELECT * FROM table SAMPLE 100;
+SAMPLE 0: Creates a table structure without data.
+Usage: CREATE TABLE new AS old WITH DATA AND STATISTICS SAMPLE 0;
+HELP / SHOW: Metadata inspection.
+Usage: HELP TABLE db.table; (attributes) or SHOW TABLE db.table; (DDL).
+Volatile Tables (Temporary)
+Crucial: Always use ON COMMIT PRESERVE ROWS or the table will be empty.
+Syntax:
+SQL
+CREATE VOLATILE TABLE vt_temp AS (
+    SELECT col1, col2 FROM source_table
+) WITH DATA 
+PRIMARY INDEX (col1) 
+ON COMMIT PRESERVE ROWS;
+
+
+Date Handling
+Current: CURRENT_DATE, CURRENT_TIMESTAMP
+Arithmetic: * date_col + 7 (add days)
+ADD_MONTHS(date_col, 1) (add months)
+Formatting: CAST(date_col AS CHAR(10) FORMAT 'DD/MM/YYYY')
+String Helpers
+Concat: col1 || col2
+Substring: SUBSTR(col, start_pos, length)
+Index: INDEX(col, 'string_to_find') (Returns position number)
+Trim: TRIM(BOTH FROM col)
+Performance (The Primary Index)
+Teradata is a parallel system; it distributes data across processors based on the Primary Index (PI).
+Skew: Occurs when one processor has too much data because the PI has low variance (e.g., PI on 'Gender'). This kills performance.
+Best Practice: Always Join on Primary Index columns.
