@@ -1,0 +1,37 @@
+The Skeleton (Order of Execution)
+SQL code is written in one order but executed in another:
+FROM & JOIN (Gather data)
+WHERE (Filter rows)
+GROUP BY (Aggregate)
+HAVING (Filter aggregates)
+SELECT (Return columns)
+ORDER BY (Sort)
+LIMIT / TOP (Restrict count)
+Joins
+INNER JOIN: Matches only. Rows must exist in both tables.
+LEFT JOIN: All rows from left table, matching rows from right. (Nulls on right if no match).
+FULL OUTER JOIN: Everything from both tables.
+Aggregations
+COUNT(*): Count rows.
+COUNT(DISTINCT col): Count unique values.
+SUM(col), AVG(col), MIN(col), MAX(col).
+Golden Rule: If you use an aggregate, every non-aggregated column must be in the GROUP BY clause.
+Conditional Logic (Case When)
+The "If statement" of SQL.
+
+SQL
+
+
+SELECT 
+    order_id,
+    CASE 
+        WHEN amount > 100 THEN 'High Value'
+        WHEN amount > 50 THEN 'Medium Value'
+        ELSE 'Low Value'
+    END AS order_category
+FROM orders;
+
+
+Set Operations
+UNION: Stacks results from two queries (removes duplicates).
+UNION ALL: Stacks results (keeps duplicates—faster).
